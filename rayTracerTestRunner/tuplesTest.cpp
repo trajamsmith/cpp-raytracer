@@ -60,7 +60,7 @@ TEST_CASE( "Two vectors with equal coords are equal" ) {
 TEST_CASE( "Adding two tuples" ) {
     auto t1 = Tuple(3, -2, 5, 1);
     auto t2 = Tuple(-2, 3, 1, 0);
-    auto sum = addTuples(t1, t2);
+    auto sum = t1 + t2;
     REQUIRE( sum.x == 1);
     REQUIRE( sum.y == 1);
     REQUIRE( sum.z == 6);
@@ -70,7 +70,7 @@ TEST_CASE( "Adding two tuples" ) {
 TEST_CASE( "Subtract two points" ) {
     auto p1 = Point(3, 2, 1);
     auto p2 = Point(5, 6, 7);
-    auto difference = subtractPoints(p1, p2);
+    auto difference = p1 - p2;
     REQUIRE( difference.x == -2);
     REQUIRE( difference.y == -4);
     REQUIRE( difference.z == -6);
@@ -125,39 +125,34 @@ TEST_CASE( "Multiplying a tuple by a fraction" ) {
 
 TEST_CASE( "Dividing a tuple by a scalar" ) {
     auto a = Tuple(1, -2, 3, -4);
-    auto mult = divideTuple(a, 2);
+    auto mult = a/2;
     auto expected = Tuple(0.5, -1, 1.5, -2);
     REQUIRE( mult == expected );
 }
 
 TEST_CASE( "Computing the magnitude of a vector(1, 0, 0)" ) {
     auto v = Vector(1, 0, 0);
-    double mag = magnitude(v);
-    REQUIRE( mag == 1.0 );
+    REQUIRE( v.magnitude() == 1.0 );
 }
 
 TEST_CASE( "Computing the magnitude of a vector(0, 1, 0)" ) {
     auto v = Vector(0, 1, 0);
-    double mag = magnitude(v);
-    REQUIRE( mag == 1.0 );
+    REQUIRE( v.magnitude() == 1.0 );
 }
 
 TEST_CASE( "Computing the magnitude of a vector(0, 0, 1)" ) {
     auto v = Vector(0, 0, 1);
-    double mag = magnitude(v);
-    REQUIRE( mag == 1.0 );
+    REQUIRE( v.magnitude() == 1.0 );
 }
 
 TEST_CASE( "Computing the magnitude of a vector(1, 2, 3)" ) {
     auto v = Vector(1, 2, 3);
-    double mag = magnitude(v);
-    REQUIRE( mag == sqrt(14) );
+    REQUIRE( v.magnitude() == sqrt(14) );
 }
 
 TEST_CASE( "Computing the magnitude of a vector(-1, -2, -3)" ) {
     auto v = Vector(-1, -2, -3);
-    double mag = magnitude(v);
-    REQUIRE( mag == sqrt(14) );
+    REQUIRE( v.magnitude() == sqrt(14) );
 }
 
 TEST_CASE( "Normalizing a vector(4, 0, 0) gives (1, 0, 0)" ) {

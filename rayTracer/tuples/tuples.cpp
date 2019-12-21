@@ -9,7 +9,7 @@
 #include "tuples.hpp"
 #include <math.h>
 
-// Classes
+// Tuples
 Tuple::Tuple(double coord_x, double coord_y, double coord_z, double coord_w) {
     x = coord_x;
     y = coord_y;
@@ -24,29 +24,40 @@ bool Tuple::operator== (const Tuple& t2) const {
             (this->w == t2.w));
 };
 
-Point::Point(double coord_x, double coord_y, double coord_z) : Tuple(coord_x, coord_y, coord_z, 1.0) {
-};
-
-Vector::Vector(double coord_x, double coord_y, double coord_z) : Tuple(coord_x, coord_y, coord_z, 0.0) {
-};
-
-// Tuple Arithmetic
-bool tupleEquality(Tuple tuple1, Tuple tuple2) {
-    return ((tuple1.x == tuple2.x) &&
-            (tuple1.y == tuple2.y) &&
-            (tuple1.z == tuple2.z) &&
-            (tuple1.w == tuple2.w));
-};
-
-Tuple addTuples(Tuple tuple1, Tuple tuple2) {
-    double x = tuple1.x + tuple2.x;
-    double y = tuple1.y + tuple2.y;
-    double z = tuple1.z + tuple2.z;
-    double w = tuple1.w + tuple2.w;
+Tuple Tuple::operator+ (const Tuple& t2) {
+    double x = this->x + t2.x;
+    double y = this->y + t2.y;
+    double z = this->z + t2.z;
+    double w = this->w + t2.w;
     
     return Tuple(x, y, z, w);
 };
 
+Tuple Tuple::operator/ (double s) {
+    return Tuple(this->x/s, this->y/s, this->z/s, this->w/s);
+};
+
+// Points
+Point::Point(double coord_x, double coord_y, double coord_z) : Tuple(coord_x, coord_y, coord_z, 1.0) {
+};
+
+Point Point::operator- (const Point& p2) {
+    double x = this->x - p2.x;
+    double y = this->y - p2.y;
+    double z = this->z - p2.z;
+    
+    return Point(x, y, z);
+};
+
+// Vectors
+Vector::Vector(double coord_x, double coord_y, double coord_z) : Tuple(coord_x, coord_y, coord_z, 0.0) {
+};
+
+double Vector::magnitude() {
+    return sqrt(pow(this->x, 2) + pow(this->y, 2) + pow(this->z, 2));
+};
+
+// Other
 Point addTuples(Point tuple1, Vector tuple2) {
     double x = tuple1.x + tuple2.x;
     double y = tuple1.y + tuple2.y;
@@ -97,10 +108,6 @@ Tuple multiplyTuple(Tuple tuple, double s) {
 
 Vector multiplyTuple(Vector tuple, double s) {
     return Vector(s*tuple.x, s*tuple.y, s*tuple.z);
-};
-
-Tuple divideTuple(Tuple tuple, double s) {
-    return Tuple(tuple.x/s, tuple.y/s, tuple.z/s, tuple.w/s);
 };
 
 double magnitude(Vector vector) {

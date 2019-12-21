@@ -131,7 +131,7 @@ TEST_CASE( "A matrix multiplied by a tuple" ) {
     Tuple t = Tuple(1, 2, 3, 1);
     Tuple mult = multTupleByMatrix(t, A);
     Tuple expected = Tuple(18, 24, 33, 1);
-    REQUIRE( tupleEquality(mult, expected) );
+    REQUIRE( mult == expected );
 }
 
 TEST_CASE( "Multiplying a matrix by the identity matrix" ) {

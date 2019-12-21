@@ -24,6 +24,9 @@
 		11D4B1F323ADA74D0032DF1D /* matrices.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1F123ADA74D0032DF1D /* matrices.cpp */; };
 		11D4B1F423ADA74D0032DF1D /* matrices.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1F123ADA74D0032DF1D /* matrices.cpp */; };
 		11D4B1F623ADA7700032DF1D /* matricesTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1F523ADA7700032DF1D /* matricesTest.cpp */; };
+		11D4B1FA23AEDDC30032DF1D /* transformations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1F823AEDDC30032DF1D /* transformations.cpp */; };
+		11D4B1FB23AEDDC30032DF1D /* transformations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1F823AEDDC30032DF1D /* transformations.cpp */; };
+		11D4B1FD23AEDDD90032DF1D /* transformationsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1FC23AEDDD90032DF1D /* transformationsTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +80,9 @@
 		11D4B1F123ADA74D0032DF1D /* matrices.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = matrices.cpp; sourceTree = "<group>"; };
 		11D4B1F223ADA74D0032DF1D /* matrices.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = matrices.hpp; sourceTree = "<group>"; };
 		11D4B1F523ADA7700032DF1D /* matricesTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = matricesTest.cpp; sourceTree = "<group>"; };
+		11D4B1F823AEDDC30032DF1D /* transformations.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = transformations.cpp; sourceTree = "<group>"; };
+		11D4B1F923AEDDC30032DF1D /* transformations.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = transformations.hpp; sourceTree = "<group>"; };
+		11D4B1FC23AEDDD90032DF1D /* transformationsTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = transformationsTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 				11D4B1E123A9B9D80032DF1D /* colorsTest.cpp */,
 				11D4B1E923A9C6A10032DF1D /* canvasTest.cpp */,
 				11D4B1F523ADA7700032DF1D /* matricesTest.cpp */,
+				11D4B1FC23AEDDD90032DF1D /* transformationsTest.cpp */,
 			);
 			path = rayTracerTestRunner;
 			sourceTree = "<group>";
@@ -130,6 +137,7 @@
 		11B9E46F23A306B70084FA49 /* rayTracer */ = {
 			isa = PBXGroup;
 			children = (
+				11D4B1F723AEDD910032DF1D /* transformations */,
 				11D4B1F023ADA7360032DF1D /* matrices */,
 				11D4B1E423A9C6840032DF1D /* canvas */,
 				11D4B1DD23A9B9820032DF1D /* colors */,
@@ -176,6 +184,15 @@
 				11D4B1F223ADA74D0032DF1D /* matrices.hpp */,
 			);
 			path = matrices;
+			sourceTree = "<group>";
+		};
+		11D4B1F723AEDD910032DF1D /* transformations */ = {
+			isa = PBXGroup;
+			children = (
+				11D4B1F823AEDDC30032DF1D /* transformations.cpp */,
+				11D4B1F923AEDDC30032DF1D /* transformations.hpp */,
+			);
+			path = transformations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11D4B1E323A9BA420032DF1D /* colors.cpp in Sources */,
+				11D4B1FD23AEDDD90032DF1D /* transformationsTest.cpp in Sources */,
 				11D4B1E823A9C6910032DF1D /* canvas.cpp in Sources */,
 				11D4B1F623ADA7700032DF1D /* matricesTest.cpp in Sources */,
 				11D4B1EA23A9C6A10032DF1D /* canvasTest.cpp in Sources */,
@@ -265,6 +283,7 @@
 				11D4B1E223A9B9D80032DF1D /* colorsTest.cpp in Sources */,
 				11D4B1F423ADA74D0032DF1D /* matrices.cpp in Sources */,
 				11D4B1D423A6D3990032DF1D /* tuplesTest.cpp in Sources */,
+				11D4B1FB23AEDDC30032DF1D /* transformations.cpp in Sources */,
 				1150A7BD23A6D1B20091D4AD /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +298,7 @@
 				11D4B1EF23ADA0C90032DF1D /* demo.cpp in Sources */,
 				11B9E47C23A330720084FA49 /* tuples.cpp in Sources */,
 				11D4B1E723A9C6910032DF1D /* canvas.cpp in Sources */,
+				11D4B1FA23AEDDC30032DF1D /* transformations.cpp in Sources */,
 				11B9E48023A5D1DF0084FA49 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

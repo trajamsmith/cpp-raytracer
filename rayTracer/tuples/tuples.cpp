@@ -15,7 +15,14 @@ Tuple::Tuple(double coord_x, double coord_y, double coord_z, double coord_w) {
     y = coord_y;
     z = coord_z;
     w = coord_w;
-}
+};
+
+bool Tuple::operator== (const Tuple& t2) const {
+    return ((this->x == t2.x) &&
+            (this->y == t2.y) &&
+            (this->z == t2.z) &&
+            (this->w == t2.w));
+};
 
 Point::Point(double coord_x, double coord_y, double coord_z) : Tuple(coord_x, coord_y, coord_z, 1.0) {
 };

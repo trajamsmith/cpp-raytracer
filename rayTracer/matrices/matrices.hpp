@@ -49,13 +49,15 @@ public:
     void print() const;
     
     Matrix operator* (const Matrix& B);
+    
+    bool operator== (const Matrix& B) const;
 };
 
 bool matrixEquality(const Matrix& A, const Matrix& B, bool precision=false);
 
 Matrix initZeroMatrix(int m, int n);
 
-Matrix transposeMatrix(Matrix A);
+Matrix transposeMatrix(const Matrix& A);
 
 Matrix tupleTo1DMatrix(Tuple t);
 

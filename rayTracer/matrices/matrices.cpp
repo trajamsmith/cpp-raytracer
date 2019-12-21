@@ -24,6 +24,49 @@ void Matrix::print() const {
     }
 };
 
+Matrix Matrix::operator* (const Matrix& B) {
+    if (this->width() != B.height()) {
+        throw "Matrix dimensions incompatible.";
+    }
+    
+    Matrix output = initZeroMatrix(this->height(), B.width());
+    Matrix Bt = transposeMatrix(B);
+    for (int orow = 0; orow < this->height(); orow++) {
+        // Per row in A
+        for (int ocol = 0; ocol < B.width(); ocol++) {
+            // Per row in B transpose
+            double sum = 0;
+            for (int i = 0; i < this->width(); i++) {
+                // Per element in the rows
+                sum += this->get(orow, i) * Bt.get(ocol, i);
+            }
+            output.data[orow][ocol] = sum;
+        }
+    }
+    
+    return output;
+};
+
+bool Matrix::operator== (const Matrix& B) const {
+    if (this->read() == B.read())
+        return true;
+    
+    if (this->height() != B.height() ||
+        this->width() != B.width())
+        return false;
+        
+    double e = .0001;
+    for (int row = 0; row < this->height(); row++) {
+        for (int col = 0; col < this->width(); col++) {
+            double diff = abs(this->get(row, col) - B.get(row, col));
+            if (diff > e)
+                return false;
+        }
+    }
+    
+    return true;
+};
+
 bool matrixEquality(const Matrix& A, const Matrix& B, bool precision) {
     // For comparing floats
     if (precision) {
@@ -53,43 +96,16 @@ Matrix initZeroMatrix(int m, int n) {
     return Matrix(array2d);
 };
 
-Matrix transposeMatrix(Matrix A) {
-    Matrix At = initZeroMatrix(A.height(), A.width());
+Matrix transposeMatrix(const Matrix& A) {
+    Matrix At = initZeroMatrix(A.width(), A.height());
     
-    int tcol = 0, trow = 0;
-    for (auto row : A.read()) {
-        for (auto el : row) {
-            At.set(trow, tcol, el);
-            trow++;
+    for (int row = 0; row < A.height(); row++) {
+        for (int col = 0; col < A.width(); col++) {
+            At.set(col, row, A.get(row, col));
         }
-        trow = 0;
-        tcol++;
     }
     
     return At;
-};
-
-Matrix Matrix::operator* (const Matrix& B) {
-    if (this->width() != B.height()) {
-        throw "Matrix dimensions incompatible.";
-    }
-    
-    Matrix output = initZeroMatrix(this->height(), B.width());
-    Matrix Bt = transposeMatrix(B);
-    for (int orow = 0; orow < this->height(); orow++) {
-        // Per row in A
-        for (int ocol = 0; ocol < B.width(); ocol++) {
-            // Per row in B transpose
-            double sum = 0;
-            for (int i = 0; i < this->width(); i++) {
-                // Per element in the rows
-                sum += this->get(orow, i) * Bt.get(ocol, i);
-            }
-            output.data[orow][ocol] = sum;
-        }
-    }
-    
-    return output;
 };
 
 Matrix tupleTo1DMatrix(Tuple t) {

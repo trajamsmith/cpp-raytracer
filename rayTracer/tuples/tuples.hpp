@@ -16,12 +16,11 @@
 // Class Declarations
 class Tuple {
 public:
-    double x;
-    double y;
-    double z;
-    double w;
+    double x, y, z, w;
     
     Tuple(double coord_x, double coord_y, double coord_z, double coord_w);
+    
+    bool operator== (const Tuple& B) const;
 };
 
 class Point : public Tuple {

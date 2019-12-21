@@ -61,7 +61,7 @@ TEST_CASE( "Matrix equality with identical matrices" ) {
         {9, 10, 11, 12},
         {13, 14, 15, 16}
     });
-    REQUIRE( matrixEquality(A, B) );
+    REQUIRE( A == B );
 };
 
 TEST_CASE( "Matrix equality with different matrices" ) {
@@ -77,7 +77,7 @@ TEST_CASE( "Matrix equality with different matrices" ) {
         {9, 11, 11, 12},
         {20, 14, 15, 16}
     });
-    REQUIRE( !matrixEquality(A, B) );
+    REQUIRE( !(A == B) );
 };
 
 TEST_CASE( "Multiplying two matrices of equal dimension" ) {
@@ -100,7 +100,7 @@ TEST_CASE( "Multiplying two matrices of equal dimension" ) {
         {40, 58, 110, 102},
         {16, 26, 46, 42}
     });
-    REQUIRE( matrixEquality(mult, expected) );
+    REQUIRE( mult == expected );
 };
 
 TEST_CASE( "Multiplying two matrices with different dimensions" ) {
@@ -118,7 +118,7 @@ TEST_CASE( "Multiplying two matrices with different dimensions" ) {
         {21, 18},
         {22, 26},
     });
-    REQUIRE( matrixEquality(mult, expected) );
+    REQUIRE( mult == expected );
 };
 
 TEST_CASE( "A matrix multiplied by a tuple" ) {
@@ -143,7 +143,7 @@ TEST_CASE( "Multiplying a matrix by the identity matrix" ) {
     });
     Matrix identity = initIdentityMatrix(4);
     Matrix mult = A * identity;
-    REQUIRE( matrixEquality(A, mult) );
+    REQUIRE( A == mult );
 }
 
 TEST_CASE( "Transpose a matrix" ) {
@@ -157,7 +157,7 @@ TEST_CASE( "Transpose a matrix" ) {
         {1, 2},
         {2, 1},
     });
-    REQUIRE( matrixEquality(At, expected) == true );
+    REQUIRE( At == expected );
 }
 
 TEST_CASE( "Transpose a square matrix" ) {
@@ -174,7 +174,7 @@ TEST_CASE( "Transpose a square matrix" ) {
         {0, 8, 3, 8},
     });
     Matrix At = transposeMatrix(A);
-    REQUIRE( matrixEquality(expected, At) );
+    REQUIRE( expected == At );
 }
 
 TEST_CASE( "Calculate the determinant of a 2x2 matrix" ) {
@@ -196,7 +196,7 @@ TEST_CASE( "A submatrix of a 3x3 matrix is a 2x2 matrix" ) {
         {-3, 2},
         {0, 6},
     });
-    REQUIRE( matrixEquality(sub, expected) );
+    REQUIRE( sub == expected );
 }
 
 TEST_CASE( "A submatrix of a 4x4 matrix is a 3x3 matrix" ) {
@@ -212,7 +212,7 @@ TEST_CASE( "A submatrix of a 4x4 matrix is a 3x3 matrix" ) {
         {-8, 8, 6},
         {-7, -1, 1},
     });
-    REQUIRE( matrixEquality(sub, expected) );
+    REQUIRE( sub == expected );
 }
 
 TEST_CASE( "Calculating a minor of a 3x3 matrix" ) {
@@ -283,7 +283,7 @@ TEST_CASE( "Calculating the inverse of a matrix" ) {
         {-0.07895, -0.22368, -0.05263, 0.19737},
         {-0.52256, -0.81391, -0.30075, 0.30639}
     });
-    REQUIRE( matrixEquality(B, expected, true) );
+    REQUIRE( B == expected );
 }
 
 TEST_CASE( "Calculating the inverse of another matrix" ) {
@@ -299,7 +299,7 @@ TEST_CASE( "Calculating the inverse of another matrix" ) {
         { 0.35897, 0.35897, 0.43590, 0.92308},
         { -0.69231, -0.69231, -0.76923, -1.92308},
     });
-    REQUIRE( matrixEquality(inverse(A), expected, true) );
+    REQUIRE( inverse(A) == expected );
 }
 
 TEST_CASE( "Calculating the inverse of a third matrix" ) {
@@ -315,7 +315,7 @@ TEST_CASE( "Calculating the inverse of a third matrix" ) {
         { -0.02901, -0.14630, -0.10926, 0.12963},
         { 0.17778, 0.06667, -0.26667, 0.33333},
     });
-    REQUIRE( matrixEquality(inverse(A), expected, true) );
+    REQUIRE( inverse(A) == expected );
 }
 
 TEST_CASE( "Multiplying a product by its inverse" ) {
@@ -332,5 +332,5 @@ TEST_CASE( "Multiplying a product by its inverse" ) {
         {6, -2, 0, 5 },
     });
     Matrix C = A * B;
-    REQUIRE( matrixEquality(A, C * inverse(B), true) );
+    REQUIRE( A == (C * inverse(B)) );
 }

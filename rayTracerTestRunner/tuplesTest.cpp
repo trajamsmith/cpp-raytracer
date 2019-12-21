@@ -29,41 +29,32 @@ TEST_CASE( "A tuple with w=0.0 is a vector." ) {
 TEST_CASE( "Point() creates tuples with w=1.0" ) {
     auto p = Point(4, -4, 3);
     auto t = Tuple(4, -4, 3, 1);
-    REQUIRE( p.x == t.x);
-    REQUIRE( p.y == t.y);
-    REQUIRE( p.z == t.z);
-    REQUIRE( p.w == t.w);
+    REQUIRE( p == t );
 }
 
 TEST_CASE( "Vector() creates tuples with w=0.0" ) {
     auto v = Vector(4, -4, 3);
     auto t = Tuple(4, -4, 3, 0);
-    REQUIRE( v.x == t.x);
-    REQUIRE( v.y == t.y);
-    REQUIRE( v.z == t.z);
-    REQUIRE( v.w == t.w);
+    REQUIRE( v == t );
 }
 
 // ------------ Tuple Arithemtic ------------
 TEST_CASE( "Two tuples with equal coords are equal" ) {
     auto t1 = Tuple(1, 2, 3, 0);
     auto t2 = Tuple(1, 2, 3, 0);
-    bool equal = tupleEquality(t1, t2);
-    REQUIRE(equal == true);
+    REQUIRE( t1 == t2 );
 }
 
 TEST_CASE( "Two points with equal coords are equal" ) {
     auto p1 = Point(1, 2, 3);
     auto p2 = Point(1, 2, 3);
-    bool equal = tupleEquality(p1, p2);
-    REQUIRE(equal == true);
+    REQUIRE( p1 == p2 );
 }
 
 TEST_CASE( "Two vectors with equal coords are equal" ) {
     auto v1 = Vector(1, 2, 3);
     auto v2 = Vector(1, 2, 3);
-    bool equal = tupleEquality(v1, v2);
-    REQUIRE(equal == true);
+    REQUIRE( v1 == v2 );
 }
 
 TEST_CASE( "Adding two tuples" ) {
@@ -115,28 +106,28 @@ TEST_CASE( "Subtracting a vector from the zero vector" ) {
 TEST_CASE( "Negating a tuple" ) {
     auto tuple = Tuple(1, -2, 3, -4);
     auto expected = Tuple(-1, 2, -3, 4);
-    REQUIRE( tupleEquality(negateTuple(tuple), expected) );
+    REQUIRE( negateTuple(tuple) == expected );
 }
 
 TEST_CASE( "Multiplying a tuple by a scalar" ) {
     auto a = Tuple(1, -2, 3, -4);
     auto mult = multiplyTuple(a, 3.5);
     auto expected = Tuple(3.5, -7, 10.5, -14);
-    REQUIRE( tupleEquality(mult, expected) );
+    REQUIRE( mult == expected );
 }
 
 TEST_CASE( "Multiplying a tuple by a fraction" ) {
     auto a = Tuple(1, -2, 3, -4);
     auto mult = multiplyTuple(a, 0.5);
     auto expected = Tuple(0.5, -1, 1.5, -2);
-    REQUIRE( tupleEquality(mult, expected) );
+    REQUIRE( mult == expected );
 }
 
 TEST_CASE( "Dividing a tuple by a scalar" ) {
     auto a = Tuple(1, -2, 3, -4);
     auto mult = divideTuple(a, 2);
     auto expected = Tuple(0.5, -1, 1.5, -2);
-    REQUIRE( tupleEquality(mult, expected) );
+    REQUIRE( mult == expected );
 }
 
 TEST_CASE( "Computing the magnitude of a vector(1, 0, 0)" ) {
@@ -172,14 +163,14 @@ TEST_CASE( "Computing the magnitude of a vector(-1, -2, -3)" ) {
 TEST_CASE( "Normalizing a vector(4, 0, 0) gives (1, 0, 0)" ) {
     auto v = Vector(4, 0, 0);
     auto expected = Vector(1, 0, 0);
-    REQUIRE(tupleEquality(normalize(v), expected));
+    REQUIRE( normalize(v) == expected );
 }
 
 TEST_CASE( "Normalizing a vector(1, 2, 3) gives ~(0.26726, 0.53452, 0.80178)" ) {
     auto v = Vector(1, 2, 3);
     auto mag = magnitude(v);
     auto expected = Vector(1/mag, 2/mag, 3/mag);
-    REQUIRE(tupleEquality(normalize(v), expected));
+    REQUIRE( normalize(v) == expected );
 }
 
 TEST_CASE( "The magnitude of a normalized vector is 1" ) {
@@ -198,7 +189,7 @@ TEST_CASE( "The corss product of two vectors" ) {
     auto a = Vector(1, 2, 3);
     auto b = Vector(2, 3, 4);
     auto expected1 = Vector(-1, 2, -1);
-    REQUIRE( tupleEquality(crossProduct(a, b), expected1) );
+    REQUIRE( crossProduct(a, b) == expected1 );
     auto expected2 = Vector(1, -2, 1);
-    REQUIRE( tupleEquality(crossProduct(b, a),expected2) );
+    REQUIRE( crossProduct(b, a) == expected2 );
 }

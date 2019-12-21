@@ -7,10 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11B9E47123A306B70084FA49 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B9E47023A306B70084FA49 /* main.cpp */; };
+		1150A7BD23A6D1B20091D4AD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1150A7BC23A6D1B20091D4AD /* main.cpp */; };
+		11B9E47C23A330720084FA49 /* tuples.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B9E47A23A330720084FA49 /* tuples.cpp */; };
+		11B9E47E23A5CFC40084FA49 /* demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B9E47D23A5CFC40084FA49 /* demo.cpp */; };
+		11B9E48023A5D1DF0084FA49 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B9E47F23A5D1DF0084FA49 /* main.cpp */; };
+		11D4B1D423A6D3990032DF1D /* tuplesTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B9E47023A306B70084FA49 /* tuplesTest.cpp */; };
+		11D4B1D623A6D9E10032DF1D /* tuples.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B9E47A23A330720084FA49 /* tuples.cpp */; };
+		11D4B1E023A9B9950032DF1D /* colors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1DE23A9B9950032DF1D /* colors.cpp */; };
+		11D4B1E223A9B9D80032DF1D /* colorsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1E123A9B9D80032DF1D /* colorsTest.cpp */; };
+		11D4B1E323A9BA420032DF1D /* colors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1DE23A9B9950032DF1D /* colors.cpp */; };
+		11D4B1E723A9C6910032DF1D /* canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1E523A9C6910032DF1D /* canvas.cpp */; };
+		11D4B1E823A9C6910032DF1D /* canvas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1E523A9C6910032DF1D /* canvas.cpp */; };
+		11D4B1EA23A9C6A10032DF1D /* canvasTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1E923A9C6A10032DF1D /* canvasTest.cpp */; };
+		11D4B1ED23A9D7460032DF1D /* output.ppm in CopyFiles */ = {isa = PBXBuildFile; fileRef = 11D4B1EC23A9D7460032DF1D /* output.ppm */; };
+		11D4B1EF23ADA0C90032DF1D /* demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1EE23ADA0C90032DF1D /* demo.cpp */; };
+		11D4B1F323ADA74D0032DF1D /* matrices.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1F123ADA74D0032DF1D /* matrices.cpp */; };
+		11D4B1F423ADA74D0032DF1D /* matrices.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1F123ADA74D0032DF1D /* matrices.cpp */; };
+		11D4B1F623ADA7700032DF1D /* matricesTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1F523ADA7700032DF1D /* matricesTest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		1150A7B823A6D1B20091D4AD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		11B9E46B23A306B70084FA49 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -20,14 +45,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		11D4B1EB23A9D7030032DF1D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				11D4B1ED23A9D7460032DF1D /* output.ppm in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1150A7BA23A6D1B20091D4AD /* rayTracerTestRunner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = rayTracerTestRunner; sourceTree = BUILT_PRODUCTS_DIR; };
+		1150A7BC23A6D1B20091D4AD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		11B9E46D23A306B70084FA49 /* RayTracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RayTracer; sourceTree = BUILT_PRODUCTS_DIR; };
-		11B9E47023A306B70084FA49 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		11B9E47023A306B70084FA49 /* tuplesTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = tuplesTest.cpp; path = rayTracerTestRunner/tuplesTest.cpp; sourceTree = SOURCE_ROOT; };
+		11B9E47A23A330720084FA49 /* tuples.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tuples.cpp; sourceTree = "<group>"; };
+		11B9E47B23A330720084FA49 /* tuples.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = tuples.hpp; sourceTree = "<group>"; };
+		11B9E47D23A5CFC40084FA49 /* demo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = demo.cpp; sourceTree = "<group>"; };
+		11B9E47F23A5D1DF0084FA49 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		11D4B1DE23A9B9950032DF1D /* colors.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = colors.cpp; sourceTree = "<group>"; };
+		11D4B1DF23A9B9950032DF1D /* colors.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = colors.hpp; sourceTree = "<group>"; };
+		11D4B1E123A9B9D80032DF1D /* colorsTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = colorsTest.cpp; sourceTree = "<group>"; };
+		11D4B1E523A9C6910032DF1D /* canvas.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = canvas.cpp; sourceTree = "<group>"; };
+		11D4B1E623A9C6910032DF1D /* canvas.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = canvas.hpp; sourceTree = "<group>"; };
+		11D4B1E923A9C6A10032DF1D /* canvasTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = canvasTest.cpp; sourceTree = "<group>"; };
+		11D4B1EC23A9D7460032DF1D /* output.ppm */ = {isa = PBXFileReference; lastKnownFileType = text; path = output.ppm; sourceTree = "<group>"; };
+		11D4B1EE23ADA0C90032DF1D /* demo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = demo.cpp; sourceTree = "<group>"; };
+		11D4B1F123ADA74D0032DF1D /* matrices.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = matrices.cpp; sourceTree = "<group>"; };
+		11D4B1F223ADA74D0032DF1D /* matrices.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = matrices.hpp; sourceTree = "<group>"; };
+		11D4B1F523ADA7700032DF1D /* matricesTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = matricesTest.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1150A7B723A6D1B20091D4AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		11B9E46A23A306B70084FA49 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -38,10 +97,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1150A7BB23A6D1B20091D4AD /* rayTracerTestRunner */ = {
+			isa = PBXGroup;
+			children = (
+				1150A7BC23A6D1B20091D4AD /* main.cpp */,
+				11B9E47023A306B70084FA49 /* tuplesTest.cpp */,
+				11D4B1E123A9B9D80032DF1D /* colorsTest.cpp */,
+				11D4B1E923A9C6A10032DF1D /* canvasTest.cpp */,
+				11D4B1F523ADA7700032DF1D /* matricesTest.cpp */,
+			);
+			path = rayTracerTestRunner;
+			sourceTree = "<group>";
+		};
 		11B9E46423A306B70084FA49 = {
 			isa = PBXGroup;
 			children = (
-				11B9E46F23A306B70084FA49 /* RayTracer */,
+				11B9E46F23A306B70084FA49 /* rayTracer */,
+				1150A7BB23A6D1B20091D4AD /* rayTracerTestRunner */,
 				11B9E46E23A306B70084FA49 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,21 +122,83 @@
 			isa = PBXGroup;
 			children = (
 				11B9E46D23A306B70084FA49 /* RayTracer */,
+				1150A7BA23A6D1B20091D4AD /* rayTracerTestRunner */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		11B9E46F23A306B70084FA49 /* RayTracer */ = {
+		11B9E46F23A306B70084FA49 /* rayTracer */ = {
 			isa = PBXGroup;
 			children = (
-				11B9E47023A306B70084FA49 /* main.cpp */,
+				11D4B1F023ADA7360032DF1D /* matrices */,
+				11D4B1E423A9C6840032DF1D /* canvas */,
+				11D4B1DD23A9B9820032DF1D /* colors */,
+				11B9E48123A5D2A80084FA49 /* tuples */,
+				11B9E47F23A5D1DF0084FA49 /* main.cpp */,
 			);
-			path = RayTracer;
+			path = rayTracer;
+			sourceTree = "<group>";
+		};
+		11B9E48123A5D2A80084FA49 /* tuples */ = {
+			isa = PBXGroup;
+			children = (
+				11B9E47D23A5CFC40084FA49 /* demo.cpp */,
+				11B9E47A23A330720084FA49 /* tuples.cpp */,
+				11B9E47B23A330720084FA49 /* tuples.hpp */,
+			);
+			path = tuples;
+			sourceTree = "<group>";
+		};
+		11D4B1DD23A9B9820032DF1D /* colors */ = {
+			isa = PBXGroup;
+			children = (
+				11D4B1DE23A9B9950032DF1D /* colors.cpp */,
+				11D4B1DF23A9B9950032DF1D /* colors.hpp */,
+			);
+			path = colors;
+			sourceTree = "<group>";
+		};
+		11D4B1E423A9C6840032DF1D /* canvas */ = {
+			isa = PBXGroup;
+			children = (
+				11D4B1EC23A9D7460032DF1D /* output.ppm */,
+				11D4B1E523A9C6910032DF1D /* canvas.cpp */,
+				11D4B1E623A9C6910032DF1D /* canvas.hpp */,
+				11D4B1EE23ADA0C90032DF1D /* demo.cpp */,
+			);
+			path = canvas;
+			sourceTree = "<group>";
+		};
+		11D4B1F023ADA7360032DF1D /* matrices */ = {
+			isa = PBXGroup;
+			children = (
+				11D4B1F123ADA74D0032DF1D /* matrices.cpp */,
+				11D4B1F223ADA74D0032DF1D /* matrices.hpp */,
+			);
+			path = matrices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1150A7B923A6D1B20091D4AD /* rayTracerTestRunner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1150A7BE23A6D1B20091D4AD /* Build configuration list for PBXNativeTarget "rayTracerTestRunner" */;
+			buildPhases = (
+				1150A7B623A6D1B20091D4AD /* Sources */,
+				1150A7B723A6D1B20091D4AD /* Frameworks */,
+				1150A7B823A6D1B20091D4AD /* CopyFiles */,
+				11D4B1EB23A9D7030032DF1D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = rayTracerTestRunner;
+			productName = rayTracerTestRunner;
+			productReference = 1150A7BA23A6D1B20091D4AD /* rayTracerTestRunner */;
+			productType = "com.apple.product-type.tool";
+		};
 		11B9E46C23A306B70084FA49 /* RayTracer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11B9E47423A306B70084FA49 /* Build configuration list for PBXNativeTarget "RayTracer" */;
@@ -91,6 +225,9 @@
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = Beeb;
 				TargetAttributes = {
+					1150A7B923A6D1B20091D4AD = {
+						CreatedOnToolsVersion = 11.1;
+					};
 					11B9E46C23A306B70084FA49 = {
 						CreatedOnToolsVersion = 11.1;
 					};
@@ -110,22 +247,61 @@
 			projectRoot = "";
 			targets = (
 				11B9E46C23A306B70084FA49 /* RayTracer */,
+				1150A7B923A6D1B20091D4AD /* rayTracerTestRunner */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1150A7B623A6D1B20091D4AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11D4B1E323A9BA420032DF1D /* colors.cpp in Sources */,
+				11D4B1E823A9C6910032DF1D /* canvas.cpp in Sources */,
+				11D4B1F623ADA7700032DF1D /* matricesTest.cpp in Sources */,
+				11D4B1EA23A9C6A10032DF1D /* canvasTest.cpp in Sources */,
+				11D4B1D623A6D9E10032DF1D /* tuples.cpp in Sources */,
+				11D4B1E223A9B9D80032DF1D /* colorsTest.cpp in Sources */,
+				11D4B1F423ADA74D0032DF1D /* matrices.cpp in Sources */,
+				11D4B1D423A6D3990032DF1D /* tuplesTest.cpp in Sources */,
+				1150A7BD23A6D1B20091D4AD /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		11B9E46923A306B70084FA49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11B9E47123A306B70084FA49 /* main.cpp in Sources */,
+				11B9E47E23A5CFC40084FA49 /* demo.cpp in Sources */,
+				11D4B1F323ADA74D0032DF1D /* matrices.cpp in Sources */,
+				11D4B1E023A9B9950032DF1D /* colors.cpp in Sources */,
+				11D4B1EF23ADA0C90032DF1D /* demo.cpp in Sources */,
+				11B9E47C23A330720084FA49 /* tuples.cpp in Sources */,
+				11D4B1E723A9C6910032DF1D /* canvas.cpp in Sources */,
+				11B9E48023A5D1DF0084FA49 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		1150A7BF23A6D1B20091D4AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1150A7C023A6D1B20091D4AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		11B9E47223A306B70084FA49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -238,6 +414,7 @@
 		11B9E47523A306B70084FA49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -246,6 +423,7 @@
 		11B9E47623A306B70084FA49 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -254,6 +432,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1150A7BE23A6D1B20091D4AD /* Build configuration list for PBXNativeTarget "rayTracerTestRunner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1150A7BF23A6D1B20091D4AD /* Debug */,
+				1150A7C023A6D1B20091D4AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		11B9E46823A306B70084FA49 /* Build configuration list for PBXProject "RayTracer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

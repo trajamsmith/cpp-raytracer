@@ -13,7 +13,6 @@
 
 #endif /* tuples_hpp */
 
-// Class Declarations
 class Tuple {
 public:
     double x, y, z, w;
@@ -22,16 +21,13 @@ public:
     
     bool operator== (const Tuple& t2) const;
     
+    Tuple operator-();
+    
     Tuple operator+ (const Tuple& t2);
     
-    Tuple operator/ (double s);
-};
-
-class Point : public Tuple {
-public:
-    Point(double coord_x, double coord_y, double coord_z);
+    Tuple operator* (double s);
     
-    Point operator- (const Point& p2);
+    Tuple operator/ (double s);
 };
 
 class Vector : public Tuple {
@@ -39,21 +35,23 @@ public:
     Vector(double coord_x, double coord_y, double coord_z);
     
     double magnitude();
+    
+    Vector operator- (const Vector& v2);
+    
+    Vector operator+ (const Vector& v2);
+    
+    Vector operator* (double s);
 };
 
-Point addTuples(Point tuple1, Vector tuple2);
-Vector addTuples(Vector tuple1, Vector tuple2);
-
-Point subtractVectorFromPoint(Point point, Vector vector);
-
-Vector subtractVectors(Vector vector1, Vector vector2);
-
-Tuple negateTuple(Tuple tuple);
-
-Tuple multiplyTuple(Tuple tuple, double scalar);
-Vector multiplyTuple(Vector tuple, double scalar);
-
-double magnitude(Vector vector);
+class Point : public Tuple {
+public:
+    Point(double coord_x, double coord_y, double coord_z);
+    
+    Point operator- (const Point& p2);
+    Point operator- (const Vector& v);
+    
+    Point operator+ (const Vector& v);
+};
 
 Vector normalize(Vector vector);
 

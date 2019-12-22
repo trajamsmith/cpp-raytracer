@@ -67,29 +67,6 @@ bool Matrix::operator== (const Matrix& B) const {
     return true;
 };
 
-bool matrixEquality(const Matrix& A, const Matrix& B, bool precision) {
-    // For comparing floats
-    if (precision) {
-        if (A.height() != B.height() ||
-            A.width() != B.width())
-            return false;
-            
-        double e = .0001;
-        for (int row = 0; row < A.height(); row++) {
-            for (int col = 0; col < A.width(); col++) {
-                double diff = abs(A.get(row, col) - B.get(row, col));
-                if (diff > e)
-                    return false;
-            }
-        }
-        
-        return true;
-    }
-    
-    // Discrete-valued matrices
-    return A.read() == B.read();
-};
-
 Matrix initZeroMatrix(int m, int n) {
     vector<double> row(n, 0.0);
     vector<vector<double>> array2d(m, row);
@@ -106,25 +83,6 @@ Matrix transposeMatrix(const Matrix& A) {
     }
     
     return At;
-};
-
-Matrix tupleTo1DMatrix(Tuple t) {
-    return Matrix({
-        {t.x},
-        {t.y},
-        {t.z},
-        {t.w},
-    });
-};
-
-Tuple oneDMatrixToTuple(Matrix A) {
-    return Tuple(A.get(0, 0), A.get(1, 0),
-                 A.get(2, 0), A.get(3, 0));
-};
-
-Tuple multTupleByMatrix(Tuple t, Matrix A) {
-    Matrix prod = A * tupleTo1DMatrix(t);
-    return oneDMatrixToTuple(prod);
 };
 
 Matrix initIdentityMatrix(int m) {

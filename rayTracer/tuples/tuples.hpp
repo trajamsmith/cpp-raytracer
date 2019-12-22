@@ -10,6 +10,7 @@
 #define tuples_hpp
 
 #include <stdio.h>
+#include <vector>
 
 #endif /* tuples_hpp */
 
@@ -18,6 +19,9 @@ public:
     double x, y, z, w;
     
     Tuple(double coord_x, double coord_y, double coord_z, double coord_w);
+    Tuple(std::vector<double> v);
+    
+    void print();
     
     bool operator== (const Tuple& t2) const;
     
@@ -33,6 +37,7 @@ public:
 class Vector : public Tuple {
 public:
     Vector(double coord_x, double coord_y, double coord_z);
+    Vector(std::vector<double> v);
     
     double magnitude();
     
@@ -46,6 +51,7 @@ public:
 class Point : public Tuple {
 public:
     Point(double coord_x, double coord_y, double coord_z);
+    Point(std::vector<double> v);
     
     Point operator- (const Point& p2);
     Point operator- (const Vector& v);

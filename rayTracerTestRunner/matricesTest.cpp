@@ -129,7 +129,7 @@ TEST_CASE( "A matrix multiplied by a tuple" ) {
         {0, 0, 0, 1},
     });
     Tuple t = Tuple(1, 2, 3, 1);
-    Tuple mult = multTupleByMatrix(t, A);
+    Tuple mult = A * t;
     Tuple expected = Tuple(18, 24, 33, 1);
     REQUIRE( mult == expected );
 }

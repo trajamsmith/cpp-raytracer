@@ -8,6 +8,8 @@
 
 #include "tuples.hpp"
 #include <math.h>
+#include <vector>
+#include <iostream>
 
 // --------------- Tuples ---------------
 Tuple::Tuple(double coord_x, double coord_y, double coord_z, double coord_w) {
@@ -17,11 +19,27 @@ Tuple::Tuple(double coord_x, double coord_y, double coord_z, double coord_w) {
     w = coord_w;
 };
 
+Tuple::Tuple(std::vector<double> v) {
+    x = v[0];
+    y = v[1];
+    z = v[2];
+    w = v[3];
+};
+
+void Tuple::print() {
+    std::cout << this->x << std::endl;
+    std::cout << this->y << std::endl;
+    std::cout << this->z << std::endl;
+    std::cout << this->w << std::endl;
+};
+
 bool Tuple::operator== (const Tuple& t2) const {
-    return ((this->x == t2.x) &&
-            (this->y == t2.y) &&
-            (this->z == t2.z) &&
-            (this->w == t2.w));
+    double e = .0001;
+    double x = abs(this->x - t2.x) < e;
+    double y = abs(this->y - t2.y) < e;
+    double z = abs(this->z - t2.z) < e;
+    double w = abs(this->w - t2.w) < e;
+    return (x && y && z && w);
 };
 
 Tuple Tuple::operator- () {
@@ -47,6 +65,9 @@ Tuple Tuple::operator/ (double s) {
 
 // --------------- Vectors ---------------
 Vector::Vector(double coord_x, double coord_y, double coord_z) : Tuple(coord_x, coord_y, coord_z, 0.0) {
+};
+
+Vector::Vector(std::vector<double> v) : Tuple(v[0], v[1], v[2], 0.0) {
 };
 
 double Vector::magnitude() {
@@ -75,6 +96,9 @@ Vector Vector::operator* (double s) {
 
 // --------------- Points ---------------
 Point::Point(double coord_x, double coord_y, double coord_z) : Tuple(coord_x, coord_y, coord_z, 1.0) {
+};
+
+Point::Point(std::vector<double> v) : Tuple(v[0], v[1], v[2], 1.0) {
 };
 
 Point Point::operator- (const Point& p2) {

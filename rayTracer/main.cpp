@@ -7,15 +7,18 @@
 //
 
 #include <stdio.h>
-#include "tuples.hpp"
 #include "canvas.hpp"
+#include "transformations.hpp"
 
 int main() {
     // Tuples demo
     // shootCannon();
     
     // Canvas demo
-    paintCannonTrajectory();
+    //paintCannonTrajectory();
+    
+    // Transformations demo
+    paintClock();
     
     return 0;
 };

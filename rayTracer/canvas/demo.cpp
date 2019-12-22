@@ -14,7 +14,7 @@
 
 void paintCannonTrajectory() {
     Point start = Point(0, 1, 0);
-    Vector velocity = multiplyTuple(normalize(Vector(1, 1.8, 0)), 11.25);
+    Vector velocity = normalize(Vector(1, 1.8, 0)) * 11.25;
     Projectile p = Projectile(start, velocity);
     
     Vector gravity = Vector(0, -0.1, 0);

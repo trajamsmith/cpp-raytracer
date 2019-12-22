@@ -74,8 +74,6 @@ public:
     bool operator== (const Matrix& B) const;
 };
 
-bool matrixEquality(const Matrix& A, const Matrix& B, bool precision=false);
-
 Matrix initZeroMatrix(int m, int n);
 
 Matrix transposeMatrix(const Matrix& A);

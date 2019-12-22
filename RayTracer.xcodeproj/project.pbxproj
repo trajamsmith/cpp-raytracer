@@ -27,6 +27,8 @@
 		11D4B1FA23AEDDC30032DF1D /* transformations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1F823AEDDC30032DF1D /* transformations.cpp */; };
 		11D4B1FB23AEDDC30032DF1D /* transformations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1F823AEDDC30032DF1D /* transformations.cpp */; };
 		11D4B1FD23AEDDD90032DF1D /* transformationsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11D4B1FC23AEDDD90032DF1D /* transformationsTest.cpp */; };
+		11F2D8B423B01F2100EDFD47 /* demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F2D8B323B01F2100EDFD47 /* demo.cpp */; };
+		11F2D8B523B0233C00EDFD47 /* demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F2D8B323B01F2100EDFD47 /* demo.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -83,6 +85,7 @@
 		11D4B1F823AEDDC30032DF1D /* transformations.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = transformations.cpp; sourceTree = "<group>"; };
 		11D4B1F923AEDDC30032DF1D /* transformations.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = transformations.hpp; sourceTree = "<group>"; };
 		11D4B1FC23AEDDD90032DF1D /* transformationsTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = transformationsTest.cpp; sourceTree = "<group>"; };
+		11F2D8B323B01F2100EDFD47 /* demo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = demo.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +194,7 @@
 			children = (
 				11D4B1F823AEDDC30032DF1D /* transformations.cpp */,
 				11D4B1F923AEDDC30032DF1D /* transformations.hpp */,
+				11F2D8B323B01F2100EDFD47 /* demo.cpp */,
 			);
 			path = transformations;
 			sourceTree = "<group>";
@@ -276,6 +280,7 @@
 			files = (
 				11D4B1E323A9BA420032DF1D /* colors.cpp in Sources */,
 				11D4B1FD23AEDDD90032DF1D /* transformationsTest.cpp in Sources */,
+				11F2D8B523B0233C00EDFD47 /* demo.cpp in Sources */,
 				11D4B1E823A9C6910032DF1D /* canvas.cpp in Sources */,
 				11D4B1F623ADA7700032DF1D /* matricesTest.cpp in Sources */,
 				11D4B1EA23A9C6A10032DF1D /* canvasTest.cpp in Sources */,
@@ -294,6 +299,7 @@
 			files = (
 				11B9E47E23A5CFC40084FA49 /* demo.cpp in Sources */,
 				11D4B1F323ADA74D0032DF1D /* matrices.cpp in Sources */,
+				11F2D8B423B01F2100EDFD47 /* demo.cpp in Sources */,
 				11D4B1E023A9B9950032DF1D /* colors.cpp in Sources */,
 				11D4B1EF23ADA0C90032DF1D /* demo.cpp in Sources */,
 				11B9E47C23A330720084FA49 /* tuples.cpp in Sources */,

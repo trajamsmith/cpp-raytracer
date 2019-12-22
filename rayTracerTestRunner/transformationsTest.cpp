@@ -154,3 +154,12 @@ TEST_CASE("Individual transformations are applied in sequence") {
     Point p4 = C * p3;
     REQUIRE(p4 == Point(15, 0, 7));
 }
+
+TEST_CASE("Chained transformations must be applied in reverse order") {
+    Point p = Point(1, 0, 1);
+    Matrix A = rotationX(PI/2);
+    Matrix B = scaling(5, 5, 5);
+    Matrix C = translation(10, 5, 7);
+    Matrix T = C * B * A;
+    REQUIRE(T * p == Point(15, 0, 7));
+}

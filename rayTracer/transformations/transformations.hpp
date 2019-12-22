@@ -27,3 +27,6 @@ Matrix rotationY(double r);
 Matrix rotationZ(double r);
 
 Matrix shearing(double xy, double xz, double yx, double yz, double zx, double zy);
+
+// Demo
+void paintClock();

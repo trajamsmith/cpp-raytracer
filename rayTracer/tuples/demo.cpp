@@ -16,8 +16,8 @@ Projectile::Projectile(Point position, Vector velocity) : position(position), ve
 Environment::Environment(Vector gravity, Vector wind) : gravity(gravity), wind(wind) {};
 
 Projectile tick(Environment env, Projectile proj) {
-    Point position = addTuples(proj.position, proj.velocity);
-    Vector velocity = addTuples(addTuples(proj.velocity, env.gravity), env.wind);
+    Point position = proj.position + proj.velocity;
+    Vector velocity = proj.velocity + env.gravity + env.wind;
     return Projectile(position, velocity);
 }
 

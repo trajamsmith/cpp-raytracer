@@ -13,7 +13,7 @@
 
 Intersection::Intersection(double t, Sphere* s) : t(t), s(s) {};
 
-vector<Intersection> intersect(Sphere* s, Ray origR) {
+vector<Intersection*> intersect(Sphere* s, Ray origR) {
     Ray r = transform(origR, inverse(s->transform));
     
     Vector sphereToRay = r.getOrigin() - Point(0, 0, 0);
@@ -22,25 +22,26 @@ vector<Intersection> intersect(Sphere* s, Ray origR) {
     double c = dotProduct(sphereToRay, sphereToRay) - 1;
     double discriminant = (b * b) - (4 * a * c);
     
-    vector<Intersection> i {};
+    vector<Intersection*> i {};
     if (discriminant >= 0) {
         double t1 = (-b - sqrt(discriminant)) / (2 * a);
         double t2 = (-b + sqrt(discriminant)) / (2 * a);
-        i.push_back(Intersection{t1, s});
-        i.push_back(Intersection{t2, s});
+        Intersection i1{t1, s};
+        Intersection i2{t2, s};
+        i.push_back(&i1);
+        i.push_back(&i2);
     };
     
     return i;
 };
 
-Intersection hit(const vector<Intersection> intersects) {
+Intersection* hit(std::vector<Intersection*> intersects) {
     double lowest = 1000000;
-    Intersection nearest{0, nullptr};
+    Intersection* nearest = nullptr;
     for (auto i : intersects) {
-        std::cout << "Hitting here" << std::endl;
-        if (i.getT() < lowest && i.getT() >= 0) {
+        if (i->getT() < lowest && i->getT() >= 0) {
             nearest = i;
-            lowest = i.getT();
+            lowest = i->getT();
         }
     }
     return nearest;

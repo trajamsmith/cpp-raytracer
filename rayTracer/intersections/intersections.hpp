@@ -28,8 +28,8 @@ public:
     };
 };
 
-std::vector<Intersection> intersect(Sphere* s, Ray r);
+std::vector<Intersection*> intersect(Sphere* s, Ray r);
 
-Intersection hit(std::vector<Intersection> intersects);
+Intersection* hit(std::vector<Intersection*> intersects);
 
 #endif /* intersections_hpp */

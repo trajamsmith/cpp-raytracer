@@ -25,7 +25,6 @@ void drawSphere() {
     Point lightPosition{-10, 10, -10};
     Color lightColor{1, 1, 1};
     PointLight light{lightPosition, lightColor};
-    std::cout << "Hitting here now" << std::endl;
     
     for (int row = 0; row < 400; row++) {
         for (int col = 0; col < 400; col++) {

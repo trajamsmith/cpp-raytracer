@@ -10,6 +10,7 @@
 #include "intersections.hpp"
 #include "spheres.hpp"
 
+// Intersection
 TEST_CASE("An intersection encapsulates t and object") {
     Sphere s = Sphere();
     Intersection i = Intersection(3.5, &s);
@@ -27,31 +28,32 @@ TEST_CASE("Aggregating intersections") {
     REQUIRE(xs[1].getT() == 2);
 }
 
+// Hit
 TEST_CASE("The hit, when all intersections have positive t") {
     Sphere s = Sphere();
     Intersection i1 = Intersection(1, &s);
     Intersection i2 = Intersection(2, &s);
-    std::vector<Intersection> xs = {i1, i2};
-    auto i = hit(xs);
-    REQUIRE(i == i1);
+    std::vector<Intersection*> xs{&i1, &i2};
+    Intersection* i = hit(xs);
+    REQUIRE(i == &i1);
 }
 
 TEST_CASE("The hit, when some intersections have negative t") {
     Sphere s = Sphere();
     Intersection i1 = Intersection(-1, &s);
     Intersection i2 = Intersection(1, &s);
-    std::vector<Intersection> xs = {i1, i2};
-    auto i = hit(xs);
-    REQUIRE(i == i2);
+    std::vector<Intersection*> xs{&i1, &i2};
+    Intersection* i = hit(xs);
+    REQUIRE(i == &i2);
 }
 
 TEST_CASE("The hit, when all intersections have negative t") {
     Sphere s = Sphere();
     Intersection i1 = Intersection(-2, &s);
     Intersection i2 = Intersection(-1, &s);
-    std::vector<Intersection> xs = {i1, i2};
-    auto i = hit(xs);
-    REQUIRE(i == Intersection{0, nullptr});
+    std::vector<Intersection*> xs{&i1, &i2};
+    Intersection* i = hit(xs);
+    REQUIRE(i == nullptr);
 }
 
 TEST_CASE("The hit is always the lowest nonnegative intersection") {
@@ -60,7 +62,7 @@ TEST_CASE("The hit is always the lowest nonnegative intersection") {
     Intersection i2 = Intersection(7, &s);
     Intersection i3 = Intersection(-3, &s);
     Intersection i4 = Intersection(2, &s);
-    std::vector<Intersection> xs = {i1, i2, i3, i4};
-    auto i = hit(xs);
-    REQUIRE(i == i4);
+    std::vector<Intersection*> xs{&i1, &i2, &i3, &i4};
+    Intersection* i = hit(xs);
+    REQUIRE(i == &i4);
 }

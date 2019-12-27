@@ -18,10 +18,7 @@ void setTransform(Sphere *s, Matrix t) {
 };
 
 Vector normalAt(Sphere *s, Point worldPoint) {
-    // WE NEED TO SWITCH HIT IN INTERSECTIONS BACK TO A REF/POINTER RETURN
-    cout << s << endl;
     Matrix init = s->transform;
-    init.print();
     Point objectPoint = inverse(s->transform) * worldPoint;
     Vector objectNorm = objectPoint - Point{0, 0, 0};
     Vector worldNorm = transposeMatrix(inverse(s->transform)) * objectNorm;

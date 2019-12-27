@@ -17,8 +17,8 @@ TEST_CASE("A ray intersects a sphere at two points") {
     Sphere s = Sphere();
     auto xs = intersect(&s, r);
     REQUIRE(xs.size() == 2);
-    REQUIRE(xs[0].getT() == 4.0);
-    REQUIRE(xs[1].getT() == 6.0);
+    REQUIRE(xs[0]->getT() == 4.0);
+    REQUIRE(xs[1]->getT() == 6.0);
 };
 
 TEST_CASE("A ray intersects a sphere a tangent") {
@@ -26,8 +26,8 @@ TEST_CASE("A ray intersects a sphere a tangent") {
     Sphere s = Sphere();
     auto xs = intersect(&s, r);
     REQUIRE(xs.size() == 2);
-    REQUIRE(xs[0].getT() == 5.0);
-    REQUIRE(xs[1].getT() == 5.0);
+    REQUIRE(xs[0]->getT() == 5.0);
+    REQUIRE(xs[1]->getT() == 5.0);
 };
 
 TEST_CASE("A ray misses a sphere") {
@@ -42,8 +42,8 @@ TEST_CASE("A ray originates inside a sphere") {
     Sphere s = Sphere();
     auto xs = intersect(&s, r);
     REQUIRE(xs.size() == 2);
-    REQUIRE(xs[0].getT() == -1.0);
-    REQUIRE(xs[1].getT() == 1.0);
+    REQUIRE(xs[0]->getT() == -1.0);
+    REQUIRE(xs[1]->getT() == 1.0);
 }
 
 TEST_CASE("A sphere is behind a ray") {
@@ -51,8 +51,8 @@ TEST_CASE("A sphere is behind a ray") {
     Sphere s = Sphere();
     auto xs = intersect(&s, r);
     REQUIRE(xs.size() == 2);
-    REQUIRE(xs[0].getT() == -6.0);
-    REQUIRE(xs[1].getT() == -4.0);
+    REQUIRE(xs[0]->getT() == -6.0);
+    REQUIRE(xs[1]->getT() == -4.0);
 }
 
 TEST_CASE("Intersect sets the object on the intersection") {
@@ -60,8 +60,8 @@ TEST_CASE("Intersect sets the object on the intersection") {
     Sphere s = Sphere();
     auto xs = intersect(&s, r);
     REQUIRE(xs.size() == 2);
-    REQUIRE(xs[0].getS() == &s);
-    REQUIRE(xs[1].getS() == &s);
+    REQUIRE(xs[0]->getS() == &s);
+    REQUIRE(xs[1]->getS() == &s);
 }
 
 TEST_CASE("A sphere's default transformation") {
@@ -82,8 +82,8 @@ TEST_CASE("Intersecting a scaled sphere with a ray") {
     setTransform(&s, scaling(2, 2, 2));
     auto xs = intersect(&s, r);
     REQUIRE(xs.size() == 2);
-    REQUIRE(xs[0].getT() == 3);
-    REQUIRE(xs[1].getT() == 7);
+    REQUIRE(xs[0]->getT() == 3);
+    REQUIRE(xs[1]->getT() == 7);
 }
 
 TEST_CASE("Intersecting a translated sphere with a ray") {

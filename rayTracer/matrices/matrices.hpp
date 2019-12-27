@@ -13,8 +13,6 @@
 #include <vector>
 #include "tuples.hpp"
 
-#endif /* matrices_hpp */
-
 using namespace std;
 
 class Matrix {
@@ -89,3 +87,5 @@ double cofactor(Matrix A, int row, int col);
 double determinant(Matrix A);
 
 Matrix inverse(Matrix A);
+
+#endif /* matrices_hpp */

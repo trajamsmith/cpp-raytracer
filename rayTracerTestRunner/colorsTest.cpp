@@ -24,13 +24,13 @@ TEST_CASE( "Adding colors" ) {
     auto c1 = Color(0.9, 0.6, 0.75);
     auto c2 = Color(0.7, 0.1, 0.25);
     auto expected = Color(1.6, 0.7, 1.0);
-    REQUIRE( colorEquality(addColors(c1, c2), expected) );
+    REQUIRE(c1 + c2 == expected);
 };
 
 TEST_CASE( "Subtracting colors" ) {
     auto c1 = Color(0.9, 0.6, 0.75);
     auto c2 = Color(0.7, 0.1, 0.25);
-    auto s = subtractColor(c1, c2);
+    auto s = c1 - c2;
     REQUIRE( s.red - 0.2 < e);
     REQUIRE( s.green == 0.5);
     REQUIRE( s.blue == 0.5);
@@ -39,13 +39,13 @@ TEST_CASE( "Subtracting colors" ) {
 TEST_CASE( "Multiplying a color by a scalar" ) {
     auto c = Color(0.2, 0.3, 0.4);
     auto expected = Color(0.4, 0.6, 0.8);
-    REQUIRE( colorEquality(multiplyColorByScalar(c, 2), expected) );
+    REQUIRE(c * 2 == expected);
 };
 
 TEST_CASE( "Multiply two colors" ) {
     auto c1 = Color(1, 0.2, 0.4);
     auto c2 = Color(0.9, 1, 0.1);
-    auto m = multiplyColors(c1, c2);
+    auto m = c1 * c2;
     REQUIRE( m.red - 0.9 < e);
     REQUIRE( m.green - 0.2 < e);
     REQUIRE( m.blue - 0.04 < e);

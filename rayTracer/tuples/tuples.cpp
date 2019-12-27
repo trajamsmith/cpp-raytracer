@@ -82,6 +82,10 @@ Vector Vector::operator- (const Vector& v2) {
     return Vector(x, y, z);
 };
 
+Vector Vector::operator-() {
+    return Vector(-this->x, -this->y, -this->z);
+};
+
 Vector Vector::operator+ (const Vector& v2) {
     double x = this->x + v2.x;
     double y = this->y + v2.y;
@@ -101,12 +105,12 @@ Point::Point(double coord_x, double coord_y, double coord_z) : Tuple(coord_x, co
 Point::Point(std::vector<double> v) : Tuple(v[0], v[1], v[2], 1.0) {
 };
 
-Point Point::operator- (const Point& p2) {
+Vector Point::operator- (const Point& p2) {
     double x = this->x - p2.x;
     double y = this->y - p2.y;
     double z = this->z - p2.z;
     
-    return Point(x, y, z);
+    return Vector(x, y, z);
 };
 
 Point Point::operator- (const Vector& v) {
@@ -144,4 +148,8 @@ Vector crossProduct(Vector v1, Vector v2) {
     return Vector(v1.y * v2.z - v1.z * v2.y,
                   v1.z * v2.x - v1.x * v2.z,
                   v1.x * v2.y - v1.y * v2.x);
+};
+
+Vector reflect(Vector v, Vector norm) {
+    return v - norm * 2 * dotProduct(v, norm);
 };

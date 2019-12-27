@@ -188,3 +188,15 @@ TEST_CASE( "The corss product of two vectors" ) {
     auto expected2 = Vector(1, -2, 1);
     REQUIRE( crossProduct(b, a) == expected2 );
 }
+
+TEST_CASE("Reflecting a vector approaching at 45 degrees") {
+    Vector v{1, -1, 0};
+    Vector n{0, 1, 0};
+    REQUIRE(reflect(v, n) == Vector{1, 1, 0});
+}
+
+TEST_CASE("Reflecting a vector off a slanted surface") {
+    Vector v{0, -1, 0};
+    Vector n{sqrt(2)/2, sqrt(2)/2, 0};
+    REQUIRE(reflect(v, n) == Vector{1, 0, 0});
+}

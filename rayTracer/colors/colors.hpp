@@ -11,8 +11,6 @@
 
 #include <stdio.h>
 
-#endif /* colors_hpp */
-
 class Color {
 public:
     double red;
@@ -20,14 +18,15 @@ public:
     double blue;
     
     Color(double r, double g, double b);
+    
+    bool operator== (const Color& c2) const;
+    
+    Color operator* (const Color& c2) const;
+    Color operator* (const double& s) const;
+    
+    Color operator+ (const Color& c2) const;
+    
+    Color operator- (const Color& c2) const;
 };
 
-bool colorEquality(Color c1, Color c2);
-
-Color addColors(Color c1, Color c2);
-
-Color subtractColor(Color c1, Color c2);
-
-Color multiplyColorByScalar(Color c, double s);
-
-Color multiplyColors(Color c1, Color c2);
+#endif /* colors_hpp */

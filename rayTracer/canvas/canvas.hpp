@@ -14,8 +14,6 @@
 #include <vector>
 #include "colors.hpp"
 
-#endif /* canvas_hpp */
-
 class Canvas {
 public:
     int width;
@@ -37,3 +35,5 @@ void canvasToPPM(Canvas canvas);
 
 // Demo function
 void paintCannonTrajectory();
+
+#endif /* canvas_hpp */

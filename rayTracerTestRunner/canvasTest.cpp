@@ -19,7 +19,7 @@ TEST_CASE( "Creating a canvas" ) {
     bool notBlack = false;
     for (auto row : c.pixels) {
         for (auto pixel : row) {
-            if (!colorEquality(pixel, Color(0, 0, 0))) {
+            if (!(pixel == Color(0, 0, 0))) {
                 notBlack = true;
             }
         }
@@ -31,5 +31,5 @@ TEST_CASE( "Writing pixels to a canvas" ) {
     auto c = Canvas(10, 20);
     auto red = Color(1, 0, 0);
     writePixel(c, 2, 3, red);
-    REQUIRE( colorEquality(pixelAt(c, 2, 3), red) );
+    REQUIRE(pixelAt(c, 2, 3) == red);
 }

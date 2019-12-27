@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include "canvas.hpp"
 #include "transformations.hpp"
+#include "spheres.hpp"
 
 int main() {
     // Tuples demo
@@ -18,7 +19,10 @@ int main() {
     //paintCannonTrajectory();
     
     // Transformations demo
-    paintClock();
+    //paintClock();
+    
+    // Rays and spheres demo
+    drawSphere();
     
     return 0;
 };

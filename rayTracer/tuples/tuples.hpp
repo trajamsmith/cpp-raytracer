@@ -12,8 +12,6 @@
 #include <stdio.h>
 #include <vector>
 
-#endif /* tuples_hpp */
-
 class Tuple {
 public:
     double x, y, z, w;
@@ -42,6 +40,7 @@ public:
     double magnitude();
     
     Vector operator- (const Vector& v2);
+    Vector operator-();
     
     Vector operator+ (const Vector& v2);
     
@@ -53,7 +52,7 @@ public:
     Point(double coord_x, double coord_y, double coord_z);
     Point(std::vector<double> v);
     
-    Point operator- (const Point& p2);
+    Vector operator- (const Point& p2);
     Point operator- (const Vector& v);
     
     Point operator+ (const Vector& v);
@@ -64,6 +63,8 @@ Vector normalize(Vector vector);
 double dotProduct(Tuple t1, Tuple t2);
 
 Vector crossProduct(Vector v1, Vector v2);
+
+Vector reflect(Vector v, Vector norm);
 
 // Demo
 class Projectile {
@@ -83,3 +84,5 @@ public:
 Projectile tick(Environment env, Projectile proj);
 
 void shootCannon();
+
+#endif /* tuples_hpp */

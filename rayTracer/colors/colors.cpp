@@ -7,36 +7,39 @@
 //
 
 #include "colors.hpp"
+#include <math.h>
 
 Color::Color(double r, double g, double b) : red(r), green(g), blue(b) {
 };
 
-bool colorEquality(Color c1, Color c2) {
-    return (c1.red == c2.red &&
-            c1.green == c2.green &&
-            c1.blue == c2.blue);
+bool Color::operator== (const Color& c2) const {
+    double e = .0001;
+    double red = abs(this->red - c2.red) < e;
+    double green = abs(this->green - c2.green) < e;
+    double blue = abs(this->blue - c2.blue) < e;
+    return (red && green && blue);
 };
 
-Color addColors(Color c1, Color c2) {
-    return Color(c1.red + c2.red,
-                 c1.green + c2.green,
-                 c1.blue + c2.blue);
+Color Color::operator* (const Color& c2) const {
+    return Color(this->red * c2.red,
+                 this->green * c2.green,
+                 this->blue * c2.blue);
+}
+
+Color Color::operator* (const double& s) const {
+    return Color(this->red * s,
+                 this->green * s,
+                 this->blue * s);
+}
+
+Color Color::operator+ (const Color& c2) const {
+    return Color(this->red + c2.red,
+                 this->green + c2.green,
+                 this->blue + c2.blue);
 };
 
-Color subtractColor(Color c1, Color c2) {
-    return Color(c1.red - c2.red,
-                 c1.green - c2.green,
-                 c1.blue - c2.blue);
-};
-
-Color multiplyColorByScalar(Color c1, double s) {
-    return Color(c1.red * s,
-                 c1. green * s,
-                 c1. blue * s);
-};
-
-Color multiplyColors(Color c1, Color c2) {
-    return Color(c1.red * c2.red,
-                 c1.green * c2.green,
-                 c1.blue * c2.blue);
+Color Color::operator- (const Color& c2) const {
+    return Color(this->red - c2.red,
+                 this->green - c2.green,
+                 this->blue - c2.blue);
 };

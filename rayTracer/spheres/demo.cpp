@@ -27,23 +27,26 @@ void drawSphere() {
     PointLight light{lightPosition, lightColor};
     
     for (int row = 0; row < 400; row++) {
+        std::cout << "Row: " << row << std::endl;
+        
         for (int col = 0; col < 400; col++) {
-            std::cout << row << " " << col << std::endl;
             // Calculate target on canvas
             Point targ{(-9.975 + col * 0.05), (-9.975 + row * 0.05), 10};
             Ray ray{orig, normalize(targ - orig)};
             
             auto xs = intersect(&s, ray);
-            Intersection hitInt = hit(xs);
+            Intersection* hitInt = hit(xs);
             
-            // Calculate Phong shaded color
-            Point point = position(ray, hitInt.getT());
-            Vector normal = normalAt(hitInt.getS(), point);
-            Vector eye = -ray.getDirection();
-            Color color = lighting(hitInt.getS()->material, light,
-                                   point, eye, normal);
-            
-            writePixel(c, col, row, color);
+            if (hitInt) {
+                // Calculate Phong shaded color
+                Point point = position(ray, hitInt->getT());
+                Vector normal = normalAt(hitInt->getS(), point);
+                Vector eye = -ray.getDirection();
+                Color color = lighting(hitInt->getS()->material, light,
+                                       point, eye, normal);
+                
+                writePixel(c, col, row, color);
+            }
         }
     }
 

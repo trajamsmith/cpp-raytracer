@@ -18,7 +18,6 @@ void setTransform(Sphere *s, Matrix t) {
 };
 
 Vector normalAt(Sphere *s, Point worldPoint) {
-    Matrix init = s->transform;
     Point objectPoint = inverse(s->transform) * worldPoint;
     Vector objectNorm = objectPoint - Point{0, 0, 0};
     Vector worldNorm = transposeMatrix(inverse(s->transform)) * objectNorm;

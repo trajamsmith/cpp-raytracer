@@ -12,6 +12,18 @@
 #include <iostream>
 
 using namespace std;
+
+bool Sphere::operator== (const Sphere& s2) const {
+    return (this->transform == s2.transform &&
+            this->material == s2.material);
+};
+
+void Sphere::print() {
+    cout << "Transform ------------" << endl;
+    this->transform.print();
+    cout << "Material ------------" << endl;
+    this->material.print();
+}
  
 void setTransform(Sphere *s, Matrix t) {
     s->transform = t;

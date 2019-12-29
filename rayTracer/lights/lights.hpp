@@ -19,6 +19,10 @@ public:
     Color intensity;
     
     PointLight(Point p, Color c) : position(p), intensity(c) {};
+    
+    void print();
+    
+    bool operator== (const PointLight& l2) const;
 };
 
 #endif /* lights_hpp */

@@ -25,6 +25,8 @@ public:
              double diffuse=0.9, double specular=0.9,
              double shininess=200.0) : color(color), ambient(ambient), diffuse(diffuse), specular(specular), shininess(shininess) {};
     
+    void print();
+    
     bool operator== (Material m2) const;
 };
 

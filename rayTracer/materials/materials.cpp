@@ -10,12 +10,22 @@
 #include <math.h>
 #include <iostream>
 
+using namespace std;
+
 bool Material::operator== (Material m2) const {
     return (this->color == m2.color &&
             this->ambient == m2.ambient &&
             this->diffuse == m2.diffuse &&
             this->specular == m2.specular &&
             this->shininess == m2.shininess);
+};
+
+void Material::print() {
+    this->color.print();
+    cout << "Ambient: " << this->ambient << endl;
+    cout << "Diffuse: " << this->diffuse << endl;
+    cout << "Specular: " << this->specular << endl;
+    cout << "Shininess: " << this->shininess << endl;
 };
 
 Color lighting(Material material, PointLight light,

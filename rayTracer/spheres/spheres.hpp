@@ -20,6 +20,10 @@ public:
     
     Sphere(Matrix transform=initIdentityMatrix(4), Material material=Material{}) :
     transform(transform), material(material) {};
+    
+    void print();
+    
+    bool operator== (const Sphere& s2) const;
 };
 
 void setTransform(Sphere *s, Matrix t);

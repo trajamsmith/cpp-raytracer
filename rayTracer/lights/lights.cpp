@@ -7,3 +7,18 @@
 //
 
 #include "lights.hpp"
+#include <iostream>
+
+using namespace std;
+
+bool PointLight::operator== (const PointLight& l2) const {
+    return (this->position == l2.position &&
+            this->intensity == l2.intensity);
+};
+
+void PointLight::print() {
+    cout << "Position: " << endl;
+    this->position.print();
+    cout << "Intensity: " << endl;
+    this->intensity.print();
+};

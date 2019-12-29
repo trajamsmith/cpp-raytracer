@@ -14,8 +14,8 @@ Color::Color(double r, double g, double b) : red(r), green(g), blue(b) {
 };
 
 void Color::print() {
-    std::cout << "RGB: " << this->red << " " <<
-    this->green << " " << this->blue << std::endl;
+    std::cout << "RGB: " << this->red << " | " <<
+    this->green << " | " << this->blue << std::endl;
 };
 
 bool Color::operator== (const Color& c2) const {

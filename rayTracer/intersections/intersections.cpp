@@ -40,7 +40,6 @@ Intersection* hit(std::vector<Intersection*> intersects) {
     double lowest = 1000000;
     Intersection* nearest = nullptr;
     for (auto i : intersects) {
-//        std::cout << i->getT() << std::endl;
         if (i->getT() < lowest && i->getT() >= 0) {
             nearest = i;
             lowest = i->getT();

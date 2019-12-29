@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1150A7BD23A6D1B20091D4AD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1150A7BC23A6D1B20091D4AD /* main.cpp */; };
+		117B804D23B849C80019E0B4 /* world.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 117B804B23B849C80019E0B4 /* world.cpp */; };
+		117B804E23B849C80019E0B4 /* world.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 117B804B23B849C80019E0B4 /* world.cpp */; };
+		117B805023B849D50019E0B4 /* worldTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 117B804F23B849D50019E0B4 /* worldTest.cpp */; };
 		11B9E47C23A330720084FA49 /* tuples.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B9E47A23A330720084FA49 /* tuples.cpp */; };
 		11B9E47E23A5CFC40084FA49 /* demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B9E47D23A5CFC40084FA49 /* demo.cpp */; };
 		11B9E48023A5D1DF0084FA49 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B9E47F23A5D1DF0084FA49 /* main.cpp */; };
@@ -80,6 +83,9 @@
 /* Begin PBXFileReference section */
 		1150A7BA23A6D1B20091D4AD /* rayTracerTestRunner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = rayTracerTestRunner; sourceTree = BUILT_PRODUCTS_DIR; };
 		1150A7BC23A6D1B20091D4AD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		117B804B23B849C80019E0B4 /* world.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = world.cpp; sourceTree = "<group>"; };
+		117B804C23B849C80019E0B4 /* world.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = world.hpp; sourceTree = "<group>"; };
+		117B804F23B849D50019E0B4 /* worldTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = worldTest.cpp; sourceTree = "<group>"; };
 		11B9E46D23A306B70084FA49 /* RayTracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RayTracer; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B9E47023A306B70084FA49 /* tuplesTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = tuplesTest.cpp; path = rayTracerTestRunner/tuplesTest.cpp; sourceTree = SOURCE_ROOT; };
 		11B9E47A23A330720084FA49 /* tuples.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tuples.cpp; sourceTree = "<group>"; };
@@ -140,19 +146,29 @@
 		1150A7BB23A6D1B20091D4AD /* rayTracerTestRunner */ = {
 			isa = PBXGroup;
 			children = (
-				1150A7BC23A6D1B20091D4AD /* main.cpp */,
-				11B9E47023A306B70084FA49 /* tuplesTest.cpp */,
-				11D4B1E123A9B9D80032DF1D /* colorsTest.cpp */,
 				11D4B1E923A9C6A10032DF1D /* canvasTest.cpp */,
-				11D4B1F523ADA7700032DF1D /* matricesTest.cpp */,
-				11D4B1FC23AEDDD90032DF1D /* transformationsTest.cpp */,
-				11F2D8BB23B0273300EDFD47 /* raysTest.cpp */,
-				11F2D8C323B0311C00EDFD47 /* spheresTest.cpp */,
+				11D4B1E123A9B9D80032DF1D /* colorsTest.cpp */,
 				11F2D8CC23B1A98D00EDFD47 /* intersectionsTest.cpp */,
 				11CEEFD023B5760C00F10F96 /* lightsTest.cpp */,
+				1150A7BC23A6D1B20091D4AD /* main.cpp */,
 				11CEEFD723B5786E00F10F96 /* materialsTest.cpp */,
+				11D4B1F523ADA7700032DF1D /* matricesTest.cpp */,
+				11F2D8BB23B0273300EDFD47 /* raysTest.cpp */,
+				11F2D8C323B0311C00EDFD47 /* spheresTest.cpp */,
+				11D4B1FC23AEDDD90032DF1D /* transformationsTest.cpp */,
+				11B9E47023A306B70084FA49 /* tuplesTest.cpp */,
+				117B804F23B849D50019E0B4 /* worldTest.cpp */,
 			);
 			path = rayTracerTestRunner;
+			sourceTree = "<group>";
+		};
+		117B804A23B849B70019E0B4 /* world */ = {
+			isa = PBXGroup;
+			children = (
+				117B804B23B849C80019E0B4 /* world.cpp */,
+				117B804C23B849C80019E0B4 /* world.hpp */,
+			);
+			path = world;
 			sourceTree = "<group>";
 		};
 		11B9E46423A306B70084FA49 = {
@@ -176,17 +192,18 @@
 		11B9E46F23A306B70084FA49 /* rayTracer */ = {
 			isa = PBXGroup;
 			children = (
-				11F2D8B623B026D800EDFD47 /* rays */,
-				11CEEFD223B5783A00F10F96 /* materials */,
-				11CEEFCB23B575EF00F10F96 /* lights */,
-				11F2D8C723B1A94B00EDFD47 /* intersections */,
-				11F2D8BE23B030DA00EDFD47 /* spheres */,
-				11D4B1F723AEDD910032DF1D /* transformations */,
-				11D4B1F023ADA7360032DF1D /* matrices */,
 				11D4B1E423A9C6840032DF1D /* canvas */,
 				11D4B1DD23A9B9820032DF1D /* colors */,
-				11B9E48123A5D2A80084FA49 /* tuples */,
+				11F2D8C723B1A94B00EDFD47 /* intersections */,
+				11CEEFCB23B575EF00F10F96 /* lights */,
 				11B9E47F23A5D1DF0084FA49 /* main.cpp */,
+				11CEEFD223B5783A00F10F96 /* materials */,
+				11D4B1F023ADA7360032DF1D /* matrices */,
+				11F2D8B623B026D800EDFD47 /* rays */,
+				11F2D8BE23B030DA00EDFD47 /* spheres */,
+				11D4B1F723AEDD910032DF1D /* transformations */,
+				11B9E48123A5D2A80084FA49 /* tuples */,
+				117B804A23B849B70019E0B4 /* world */,
 			);
 			path = rayTracer;
 			sourceTree = "<group>";
@@ -369,7 +386,9 @@
 				11D4B1FD23AEDDD90032DF1D /* transformationsTest.cpp in Sources */,
 				11D4B1E823A9C6910032DF1D /* canvas.cpp in Sources */,
 				11F2D8BD23B0273300EDFD47 /* raysTest.cpp in Sources */,
+				117B804E23B849C80019E0B4 /* world.cpp in Sources */,
 				11F2D8BA23B0270000EDFD47 /* rays.cpp in Sources */,
+				117B805023B849D50019E0B4 /* worldTest.cpp in Sources */,
 				11D4B1F623ADA7700032DF1D /* matricesTest.cpp in Sources */,
 				11CEEFD823B5786E00F10F96 /* materialsTest.cpp in Sources */,
 				11D4B1EA23A9C6A10032DF1D /* canvasTest.cpp in Sources */,
@@ -395,6 +414,7 @@
 			files = (
 				11B9E47E23A5CFC40084FA49 /* demo.cpp in Sources */,
 				11D4B1F323ADA74D0032DF1D /* matrices.cpp in Sources */,
+				117B804D23B849C80019E0B4 /* world.cpp in Sources */,
 				11F2D8CA23B1A97500EDFD47 /* intersections.cpp in Sources */,
 				11F2D8B423B01F2100EDFD47 /* demo.cpp in Sources */,
 				11D4B1E023A9B9950032DF1D /* colors.cpp in Sources */,

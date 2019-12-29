@@ -13,10 +13,28 @@
 #include "lights.hpp"
 #include <iostream>
 
+Ray calcRay(Point orig, int col, int row) {
+    Point targ{(-9.975 + col * 0.05), (-9.975 + row * 0.05), 10};
+    return Ray{orig, normalize(targ - orig)};
+}
+
+Intersection* getHit(Sphere* s, Ray ray) {
+    vector<Intersection*> xs = intersect(s, ray);
+    auto hitInt = hit(xs);
+    
+    for (auto i : xs) {
+        if (i != hitInt) {
+            delete i;
+        }
+    }
+    
+    return hitInt;
+}
+
 void drawSphere() {
     Canvas c = Canvas(400, 400);
     // Rays originate at (0, 0 -5)
-    Point orig{0, 0, -5};
+    Point orig{0, 0, -2};
     
     Sphere s{};
     s.material = Material{};
@@ -31,22 +49,20 @@ void drawSphere() {
         
         for (int col = 0; col < 400; col++) {
             // Calculate target on canvas
-            Point targ{(-9.975 + col * 0.05), (-9.975 + row * 0.05), 10};
-            Ray ray{orig, normalize(targ - orig)};
-            
-            auto xs = intersect(&s, ray);
-            Intersection* hitInt = hit(xs);
+            Ray ray = calcRay(orig, col, row);
+            auto hitInt = getHit(&s, ray);
             
             if (hitInt) {
                 // Calculate Phong shaded color
                 Point point = position(ray, hitInt->getT());
-                Vector normal = normalAt(hitInt->getS(), point);
+                Vector normal = normalAt(&s, point);
                 Vector eye = -ray.getDirection();
-                Color color = lighting(hitInt->getS()->material, light,
+                Color color = lighting(s.material, light,
                                        point, eye, normal);
-                
                 writePixel(c, col, row, color);
             }
+            
+            delete hitInt;
         }
     }
 

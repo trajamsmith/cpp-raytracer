@@ -176,11 +176,11 @@
 		11B9E46F23A306B70084FA49 /* rayTracer */ = {
 			isa = PBXGroup;
 			children = (
+				11F2D8B623B026D800EDFD47 /* rays */,
 				11CEEFD223B5783A00F10F96 /* materials */,
 				11CEEFCB23B575EF00F10F96 /* lights */,
 				11F2D8C723B1A94B00EDFD47 /* intersections */,
 				11F2D8BE23B030DA00EDFD47 /* spheres */,
-				11F2D8B623B026D800EDFD47 /* rays */,
 				11D4B1F723AEDD910032DF1D /* transformations */,
 				11D4B1F023ADA7360032DF1D /* matrices */,
 				11D4B1E423A9C6840032DF1D /* canvas */,

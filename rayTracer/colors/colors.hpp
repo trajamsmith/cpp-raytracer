@@ -18,6 +18,7 @@ public:
     double blue;
     
     Color(double r, double g, double b);
+    void print();
     
     bool operator== (const Color& c2) const;
     

@@ -23,13 +23,14 @@ vector<Intersection*> intersect(Sphere* s, Ray origR) {
     double discriminant = (b * b) - (4 * a * c);
     
     vector<Intersection*> i {};
+    i.reserve(2);
     if (discriminant >= 0) {
         double t1 = (-b - sqrt(discriminant)) / (2 * a);
         double t2 = (-b + sqrt(discriminant)) / (2 * a);
-        Intersection i1{t1, s};
-        Intersection i2{t2, s};
-        i.push_back(&i1);
-        i.push_back(&i2);
+        auto i1 = new Intersection{t1, s};
+        auto i2 = new Intersection{t2, s};
+        i.push_back(i1);
+        i.push_back(i2);
     };
     
     return i;
@@ -39,6 +40,7 @@ Intersection* hit(std::vector<Intersection*> intersects) {
     double lowest = 1000000;
     Intersection* nearest = nullptr;
     for (auto i : intersects) {
+//        std::cout << i->getT() << std::endl;
         if (i->getT() < lowest && i->getT() >= 0) {
             nearest = i;
             lowest = i->getT();

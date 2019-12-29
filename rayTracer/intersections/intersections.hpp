@@ -11,12 +11,13 @@
 
 #include <stdio.h>
 #include "spheres.hpp"
+#include <iostream>
 
 class Intersection {
-private:
+public:
     double t;
     Sphere* s;
-public:
+    
     Intersection(double t, Sphere* s);
     
     double getT() const { return this->t; };

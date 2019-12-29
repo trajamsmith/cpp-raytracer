@@ -12,12 +12,12 @@
 #include <iostream>
 
 using namespace std;
-
+ 
 void setTransform(Sphere *s, Matrix t) {
     s->transform = t;
 };
 
-Vector normalAt(Sphere *s, Point worldPoint) {
+Vector normalAt(Sphere* s, Point worldPoint) {
     Point objectPoint = inverse(s->transform) * worldPoint;
     Vector objectNorm = objectPoint - Point{0, 0, 0};
     Vector worldNorm = transposeMatrix(inverse(s->transform)) * objectNorm;

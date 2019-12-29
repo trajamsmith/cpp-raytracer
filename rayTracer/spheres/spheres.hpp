@@ -15,10 +15,11 @@
 
 class Sphere {
 public:
-    Matrix transform = initIdentityMatrix(4);
+    Matrix transform;
     Material material;
     
-    Sphere() = default;
+    Sphere(Matrix transform=initIdentityMatrix(4), Material material=Material{}) :
+    transform(transform), material(material) {};
 };
 
 void setTransform(Sphere *s, Matrix t);

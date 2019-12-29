@@ -8,6 +8,7 @@
 
 #include "materials.hpp"
 #include <math.h>
+#include <iostream>
 
 bool Material::operator== (Material m2) const {
     return (this->color == m2.color &&
@@ -36,5 +37,8 @@ Color lighting(Material material, PointLight light,
             specular = light.intensity * material.specular * factor;
         }
     }
+//    ambient.print();
+//    diffuse.print();
+//    specular.print();
     return ambient + diffuse + specular;
 };

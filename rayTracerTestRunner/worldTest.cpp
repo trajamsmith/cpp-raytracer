@@ -29,7 +29,7 @@ TEST_CASE("The default world") {
     s2.transform = scaling(0.5, 0.5, 0.5);
 
     World w = defaultWorld();
-    PointLight* pL = w.light;
+    shared_ptr<PointLight> pL(w.light);
     
     REQUIRE(w.objects[0] == s1);
     REQUIRE(w.objects[1] == s2);
@@ -45,4 +45,26 @@ TEST_CASE("Intersect a world with a ray") {
     REQUIRE(xs[1]->t == 4.5);
     REQUIRE(xs[2]->t == 5.5);
     REQUIRE(xs[3]->t == 6);
+}
+
+TEST_CASE("Shading an intersection") {
+    World w = defaultWorld();
+    Ray r{Point{0, 0, -5}, Vector{0, 0, 1}};
+    Sphere* shape = &w.objects[0];
+    Intersection i{4, shape};
+    Comps comps = prepareComputations(i, r);
+    auto c = shadeHit(w, comps);
+    REQUIRE(c == Color{0.380666, 0.47583, 0.2855});
+}
+
+TEST_CASE("Shading an intersection from the inside") {
+    World w = defaultWorld();
+    shared_ptr<PointLight> light(new PointLight{Point{0, 0.25, 0}, Color{1, 1, 1}});
+    w.light = light;
+    Ray r{Point{0, 0, 0}, Vector{0, 0, 1}};
+    shared_ptr<Sphere> shape(&w.objects[0]);
+    Intersection i{0.5, shape};
+    Comps comps = prepareComputations(i, r);
+    Color c = shadeHit(w, comps);
+    REQUIRE(c == Color{0.90498, 0.90498, 0.90498});
 }

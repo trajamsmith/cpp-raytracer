@@ -33,4 +33,15 @@ std::vector<Intersection*> intersect(Sphere* s, Ray r);
 
 Intersection* hit(std::vector<Intersection*> intersects);
 
+struct Comps {
+    double t;
+    Sphere* object;
+    Point point{0, 0, 0};
+    Vector eyeV{0, 0, 0};
+    Vector normalV{0, 0, 0};
+    bool inside;
+};
+
+Comps prepareComputations(Intersection i, Ray r);
+
 #endif /* intersections_hpp */

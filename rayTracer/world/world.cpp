@@ -23,7 +23,7 @@ World defaultWorld() {
     s2.transform = scaling(0.5, 0.5, 0.5);
     w.objects.push_back(s2);
     
-    PointLight* light = new PointLight{Point{-10, 10, -10}, Color{1, 1, 1}};
+    shared_ptr<PointLight> light(new PointLight{Point{-10, 10, -10}, Color{1, 1, 1}});
     w.light = light;
     
     return w;

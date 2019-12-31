@@ -47,3 +47,24 @@ Intersection* hit(std::vector<Intersection*> intersects) {
     }
     return nearest;
 };
+
+Comps prepareComputations(Intersection i, Ray r) {
+    Comps comps{};
+    
+    comps.t = i.getT();
+    comps.object = i.getS();
+    
+    comps.point = position(r, comps.t);
+    comps.eyeV = -(r.getDirection());
+    comps.normalV = normalAt(comps.object, comps.point);
+    
+    double dot = dotProduct(comps.normalV, comps.eyeV);
+    if (dot < 0) {
+        comps.inside = true;
+        comps.normalV = -comps.normalV;
+    } else {
+        comps.inside = false;
+    }
+    
+    return comps;
+};

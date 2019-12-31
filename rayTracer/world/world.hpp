@@ -18,7 +18,7 @@
 class World {
 public:
     vector<Sphere> objects;
-    PointLight* light;
+    shared_ptr<PointLight> light;
     
     World(vector<Sphere> objects={}, PointLight* light=nullptr) :
     objects(objects), light(light) {};

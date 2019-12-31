@@ -66,3 +66,34 @@ TEST_CASE("The hit is always the lowest nonnegative intersection") {
     Intersection* i = hit(xs);
     REQUIRE(i == &i4);
 }
+
+TEST_CASE("Precomputing the state of an intersection") {
+    Ray r{Point{0, 0, -5}, Vector{0, 0, 1}};
+    Sphere shape{};
+    Intersection i{4, &shape};
+    auto comps = prepareComputations(i, r);
+    REQUIRE(comps.t == i.t);
+    REQUIRE(comps.object == i.getS());
+    REQUIRE(comps.point == Point{0, 0, -1});
+    REQUIRE(comps.eyeV == Vector{0, 0, -1});
+    REQUIRE(comps.normalV == Vector{0, 0, -1});
+}
+
+TEST_CASE("The hit, when an intersection occurs on the outside") {
+    Ray r{Point{0, 0, -5}, Vector{0, 0, 1}};
+    Sphere shape{};
+    Intersection i{4, &shape};
+    Comps comps = prepareComputations(i, r);
+    REQUIRE(comps.inside == false);
+}
+
+TEST_CASE("The hit, when an intersection occurs on the inside") {
+    Ray r{Point{0, 0, 0}, Vector{0, 0, 1}};
+    Sphere shape{};
+    Intersection i{1, &shape};
+    Comps comps = prepareComputations(i, r);
+    REQUIRE(comps.point == Point{0, 0, 1});
+    REQUIRE(comps.eyeV == Vector{0, 0, -1});
+    REQUIRE(comps.inside == true);
+    REQUIRE(comps.normalV == Vector{0, 0, -1});
+}

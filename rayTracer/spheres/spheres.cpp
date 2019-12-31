@@ -25,11 +25,11 @@ void Sphere::print() {
     this->material.print();
 }
  
-void setTransform(Sphere *s, Matrix t) {
+void setTransform(shared_ptr<Sphere> s, Matrix t) {
     s->transform = t;
 };
 
-Vector normalAt(Sphere* s, Point worldPoint) {
+Vector normalAt(shared_ptr<Sphere> s, Point worldPoint) {
     Point objectPoint = inverse(s->transform) * worldPoint;
     Vector objectNorm = objectPoint - Point{0, 0, 0};
     Vector worldNorm = transposeMatrix(inverse(s->transform)) * objectNorm;

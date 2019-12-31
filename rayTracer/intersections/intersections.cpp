@@ -11,9 +11,9 @@
 #include <math.h>
 #include <iostream>
 
-Intersection::Intersection(double t, Sphere* s) : t(t), s(s) {};
+Intersection::Intersection(double t, shared_ptr<Sphere> s) : t(t), s(s) {};
 
-vector<Intersection*> intersect(Sphere* s, Ray origR) {
+vector<Intersection*> intersect(shared_ptr<Sphere> s, Ray origR) {
     Ray r = transform(origR, inverse(s->transform));
     
     Vector sphereToRay = r.getOrigin() - Point(0, 0, 0);

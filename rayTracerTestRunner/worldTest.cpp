@@ -50,7 +50,7 @@ TEST_CASE("Intersect a world with a ray") {
 TEST_CASE("Shading an intersection") {
     World w = defaultWorld();
     Ray r{Point{0, 0, -5}, Vector{0, 0, 1}};
-    Sphere* shape = &w.objects[0];
+    shared_ptr<Sphere> shape(&w.objects[0]);
     Intersection i{4, shape};
     Comps comps = prepareComputations(i, r);
     auto c = shadeHit(w, comps);

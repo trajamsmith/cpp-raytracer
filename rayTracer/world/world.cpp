@@ -33,7 +33,8 @@ vector<Intersection*> intersectWorld(const World& w, Ray r) {
     vector<Intersection*> output{};
     
     for (auto obj : w.objects) {
-        vector<Intersection*> temp = intersect(&obj, r);
+        shared_ptr<Sphere> p(&obj);
+        vector<Intersection*> temp = intersect(p, r);
         output.insert( output.end(), temp.begin(), temp.end() );
     }
     

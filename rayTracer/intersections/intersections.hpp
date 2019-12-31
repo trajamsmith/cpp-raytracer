@@ -16,12 +16,12 @@
 class Intersection {
 public:
     double t;
-    Sphere* s;
+    shared_ptr<Sphere> s;
     
-    Intersection(double t, Sphere* s);
+    Intersection(double t, shared_ptr<Sphere> s);
     
     double getT() const { return this->t; };
-    Sphere* getS() const { return this->s; };
+    shared_ptr<Sphere> getS() const { return this->s; };
     
     bool operator== (Intersection i2) const {
         return (this->getT() == i2.getT() &&
@@ -29,13 +29,13 @@ public:
     };
 };
 
-std::vector<Intersection*> intersect(Sphere* s, Ray r);
+std::vector<Intersection*> intersect(shared_ptr<Sphere> s, Ray r);
 
 Intersection* hit(std::vector<Intersection*> intersects);
 
 struct Comps {
     double t;
-    Sphere* object;
+    shared_ptr<Sphere> object;
     Point point{0, 0, 0};
     Vector eyeV{0, 0, 0};
     Vector normalV{0, 0, 0};

@@ -13,9 +13,7 @@
 Matrix::Matrix(vector<vector<double>> data) : data(data) {};
 
 void Matrix::print() const {
-    vector<vector<double>> data = this->data;
-    
-    for (auto row : data) {
+    for (auto row : this->data) {
         string srow = "";
         for (auto el : row) {
             srow += to_string(el) + " ";

@@ -11,8 +11,6 @@
 #include <math.h>
 #include <iostream>
 
-Intersection::Intersection(double t, shared_ptr<Sphere> s) : t(t), s(s) {};
-
 vector<Intersection*> intersect(shared_ptr<Sphere> s, Ray origR) {
     Ray r = transform(origR, inverse(s->transform));
     

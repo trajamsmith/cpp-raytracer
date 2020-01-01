@@ -15,11 +15,9 @@
 
 using namespace std;
 
-class Matrix {
-private:
+struct Matrix {
     vector<vector<double>> data;
     
-public:
     Matrix(vector<vector<double>> data);
     
     double get(int row, int col) const {

@@ -18,18 +18,18 @@ public:
     double t;
     shared_ptr<Sphere> s;
     
-    Intersection(double t, shared_ptr<Sphere> s);
+    Intersection(double t, shared_ptr<Sphere> s) : t(t), s(move(s)) {};
     
     double getT() const { return this->t; };
-    shared_ptr<Sphere> getS() const { return this->s; };
+    shared_ptr<Sphere> getS() { return std::move(this->s); };
     
-    bool operator== (Intersection i2) const {
+    bool operator== (Intersection i2) {
         return (this->getT() == i2.getT() &&
                 this->getS() == i2.getS());
     };
 };
 
-std::vector<Intersection*> intersect(shared_ptr<Sphere> s, Ray r);
+std::vector<Intersection*> intersect(const shared_ptr<Sphere> s, Ray r);
 
 Intersection* hit(std::vector<Intersection*> intersects);
 

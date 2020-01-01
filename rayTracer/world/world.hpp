@@ -15,17 +15,18 @@
 #include "spheres.hpp"
 #include "intersections.hpp"
 
-class World {
-public:
-    vector<Sphere> objects;
+struct World {
+    vector<shared_ptr<Sphere>> objects;
     shared_ptr<PointLight> light;
     
-    World(vector<Sphere> objects={}, PointLight* light=nullptr) :
-    objects(objects), light(light) {};
+    World(vector<shared_ptr<Sphere>> objects={}, shared_ptr<PointLight> light=nullptr) :
+    objects(std::move(objects)), light(light) {};
 };
 
 World defaultWorld();
 
 vector<Intersection*> intersectWorld(const World& w, Ray r);
+
+Color shadeHit(World w, Comps c);
 
 #endif /* world_hpp */

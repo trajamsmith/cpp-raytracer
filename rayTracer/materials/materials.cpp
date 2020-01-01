@@ -47,8 +47,6 @@ Color lighting(Material material, PointLight light,
             specular = light.intensity * material.specular * factor;
         }
     }
-//    ambient.print();
-//    diffuse.print();
-//    specular.print();
+
     return ambient + diffuse + specular;
 };

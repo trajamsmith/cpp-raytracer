@@ -26,8 +26,6 @@ public:
     bool operator== (const Sphere& s2) const;
 };
 
-void setTransform(shared_ptr<Sphere> s, Matrix t);
-
 Vector normalAt(shared_ptr<Sphere> s, Point p);
 
 // Demo

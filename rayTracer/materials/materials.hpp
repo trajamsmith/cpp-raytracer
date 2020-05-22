@@ -30,6 +30,6 @@ public:
     bool operator== (Material m2) const;
 };
 
-Color lighting(Material m, PointLight l, Point p, Vector eyeV, Vector normalV);
+Color lighting(Material m, PointLight l, Point p, Vector eyeV, Vector normalV, bool inShadow=false);
 
 #endif /* materials_hpp */

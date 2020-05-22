@@ -10,7 +10,7 @@
 #define intersections_hpp
 
 #include <stdio.h>
-#include "spheres.hpp"
+#include "objects.hpp"
 #include <iostream>
 
 class Intersection {
@@ -40,6 +40,7 @@ struct Comps {
     Vector eyeV{0, 0, 0};
     Vector normalV{0, 0, 0};
     bool inside;
+    Point overPoint{0, 0, 0};
 };
 
 Comps prepareComputations(Intersection i, Ray r);

@@ -12,15 +12,12 @@
 #include <stdio.h>
 #include "matrices.hpp"
 
-class Ray {
-private:
+struct Ray {
     Point origin;
     Vector direction;
-public:
-    Ray(Point origin, Vector direction);
     
-    Point getOrigin();
-    Vector getDirection();
+    Ray(Point origin, Vector direction);
+
 };
 
 Point position(Ray r, double t);

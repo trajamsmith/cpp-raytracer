@@ -7,7 +7,7 @@
 //
 
 #include "catch.hpp"
-#include "spheres.hpp"
+#include "objects.hpp"
 #include "transformations.hpp"
 #include "intersections.hpp"
 #include <math.h>

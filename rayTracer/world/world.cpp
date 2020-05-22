@@ -30,7 +30,7 @@ World defaultWorld() {
     return w;
 };
 
-vector<Intersection*> intersectWorld(World& w, Ray r) {
+vector<Intersection*> intersectWorld(const World& w, Ray r) {
     vector<Intersection*> output{};
     
     for (int i = 0; i < w.objects.size(); i++) {
@@ -47,6 +47,34 @@ vector<Intersection*> intersectWorld(World& w, Ray r) {
     return output;
 };
 
-Color shadeHit(World w, Comps c) {
-    return lighting(c.object->material, *w.light, c.point, c.eyeV, c.normalV);
+Color shadeHit(const World& w, Comps c) {
+    bool inShadow = isShadowed(w, c.overPoint);
+    return lighting(c.object->material, *w.light, c.point, c.eyeV, c.normalV, inShadow);
+};
+
+Color colorAt(const World& w, Ray r) {
+    vector<Intersection*> ints = intersectWorld(w, r);
+    
+    if (ints.size() == 0) {
+        return Color{0, 0, 0};
+    } else {
+        Comps comps = prepareComputations(*ints[0], r);
+        return shadeHit(w, comps);
+    }
+};
+
+bool isShadowed(const World& world, Point& p) {
+    Vector v = world.light->position - p;
+    double distance = v.magnitude();
+    Vector direction = normalize(v);
+    Ray r{p, direction};
+    
+    auto intersections = intersectWorld(world, r);
+    
+    auto h = hit(intersections);
+    if (h && h->t < distance) {
+        return true;
+    } else {
+        return false;
+    }
 };

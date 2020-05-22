@@ -26,6 +26,8 @@ Matrix rotationZ(double r);
 
 Matrix shearing(double xy, double xz, double yx, double yz, double zx, double zy);
 
+Matrix viewTransform(Point from, Point to, Vector up);
+
 // Demo
 void paintClock();
 

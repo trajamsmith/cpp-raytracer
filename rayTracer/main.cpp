@@ -10,6 +10,7 @@
 #include "canvas.hpp"
 #include "transformations.hpp"
 #include "spheres.hpp"
+#include "world.hpp"
 
 int main() {
     // Tuples demo
@@ -22,7 +23,10 @@ int main() {
     //paintClock();
     
     // Rays and spheres demo
-    drawSphere();
+    //drawSphere();
+    
+    // World and camera demo
+    renderWorld();
     
     return 0;
 };

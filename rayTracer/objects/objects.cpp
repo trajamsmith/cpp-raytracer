@@ -6,24 +6,24 @@
 //  Copyright © 2019 Beeb. All rights reserved.
 //
 
-#include "spheres.hpp"
+#include "objects.hpp"
 #include <math.h>
 #include "rays.hpp"
 #include <iostream>
 
 using namespace std;
 
-bool Sphere::operator== (const Sphere& s2) const {
-    return (this->transform == s2.transform &&
-            this->material == s2.material);
-};
-
-void Sphere::print() {
+void Object::print() {
     cout << "Transform ------------" << endl;
     this->transform.print();
     cout << "Material ------------" << endl;
     this->material.print();
 }
+
+bool Object::operator== (const Object& o2) const {
+    return (this->transform == o2.transform &&
+            this->material == o2.material);
+};
  
 void setTransform(shared_ptr<Sphere> s, Matrix t) {
     s->transform = t;

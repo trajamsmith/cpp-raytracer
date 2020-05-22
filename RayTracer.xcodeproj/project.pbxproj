@@ -14,6 +14,10 @@
 		11B9E47C23A330720084FA49 /* tuples.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B9E47A23A330720084FA49 /* tuples.cpp */; };
 		11B9E47E23A5CFC40084FA49 /* demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B9E47D23A5CFC40084FA49 /* demo.cpp */; };
 		11B9E48023A5D1DF0084FA49 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B9E47F23A5D1DF0084FA49 /* main.cpp */; };
+		11C640C523BD7745008CD1E8 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11C640C323BD7745008CD1E8 /* camera.cpp */; };
+		11C640C623BD7745008CD1E8 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11C640C323BD7745008CD1E8 /* camera.cpp */; };
+		11C640C823BD7756008CD1E8 /* cameraTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11C640C723BD7756008CD1E8 /* cameraTest.cpp */; };
+		11C640CA23BD86B4008CD1E8 /* demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11C640C923BD86B4008CD1E8 /* demo.cpp */; };
 		11CEEFCE23B575FC00F10F96 /* lights.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11CEEFCC23B575FC00F10F96 /* lights.cpp */; };
 		11CEEFCF23B575FC00F10F96 /* lights.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11CEEFCC23B575FC00F10F96 /* lights.cpp */; };
 		11CEEFD123B5760C00F10F96 /* lightsTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11CEEFD023B5760C00F10F96 /* lightsTest.cpp */; };
@@ -40,8 +44,8 @@
 		11F2D8B923B0270000EDFD47 /* rays.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F2D8B723B0270000EDFD47 /* rays.cpp */; };
 		11F2D8BA23B0270000EDFD47 /* rays.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F2D8B723B0270000EDFD47 /* rays.cpp */; };
 		11F2D8BD23B0273300EDFD47 /* raysTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F2D8BB23B0273300EDFD47 /* raysTest.cpp */; };
-		11F2D8C123B030E600EDFD47 /* spheres.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F2D8BF23B030E600EDFD47 /* spheres.cpp */; };
-		11F2D8C223B030E600EDFD47 /* spheres.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F2D8BF23B030E600EDFD47 /* spheres.cpp */; };
+		11F2D8C123B030E600EDFD47 /* objects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F2D8BF23B030E600EDFD47 /* objects.cpp */; };
+		11F2D8C223B030E600EDFD47 /* objects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F2D8BF23B030E600EDFD47 /* objects.cpp */; };
 		11F2D8C423B0311C00EDFD47 /* spheresTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F2D8C323B0311C00EDFD47 /* spheresTest.cpp */; };
 		11F2D8C623B196CE00EDFD47 /* demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F2D8C523B196CE00EDFD47 /* demo.cpp */; };
 		11F2D8CA23B1A97500EDFD47 /* intersections.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F2D8C823B1A97500EDFD47 /* intersections.cpp */; };
@@ -92,6 +96,10 @@
 		11B9E47B23A330720084FA49 /* tuples.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = tuples.hpp; sourceTree = "<group>"; };
 		11B9E47D23A5CFC40084FA49 /* demo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = demo.cpp; sourceTree = "<group>"; };
 		11B9E47F23A5D1DF0084FA49 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		11C640C323BD7745008CD1E8 /* camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
+		11C640C423BD7745008CD1E8 /* camera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = camera.hpp; sourceTree = "<group>"; };
+		11C640C723BD7756008CD1E8 /* cameraTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cameraTest.cpp; sourceTree = "<group>"; };
+		11C640C923BD86B4008CD1E8 /* demo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = demo.cpp; sourceTree = "<group>"; };
 		11CEEFCC23B575FC00F10F96 /* lights.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = lights.cpp; sourceTree = "<group>"; };
 		11CEEFCD23B575FC00F10F96 /* lights.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = lights.hpp; sourceTree = "<group>"; };
 		11CEEFD023B5760C00F10F96 /* lightsTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = lightsTest.cpp; sourceTree = "<group>"; };
@@ -116,8 +124,8 @@
 		11F2D8B723B0270000EDFD47 /* rays.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rays.cpp; sourceTree = "<group>"; };
 		11F2D8B823B0270000EDFD47 /* rays.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rays.hpp; sourceTree = "<group>"; };
 		11F2D8BB23B0273300EDFD47 /* raysTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = raysTest.cpp; sourceTree = "<group>"; };
-		11F2D8BF23B030E600EDFD47 /* spheres.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = spheres.cpp; sourceTree = "<group>"; };
-		11F2D8C023B030E600EDFD47 /* spheres.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = spheres.hpp; sourceTree = "<group>"; };
+		11F2D8BF23B030E600EDFD47 /* objects.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = objects.cpp; sourceTree = "<group>"; };
+		11F2D8C023B030E600EDFD47 /* objects.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = objects.hpp; sourceTree = "<group>"; };
 		11F2D8C323B0311C00EDFD47 /* spheresTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = spheresTest.cpp; sourceTree = "<group>"; };
 		11F2D8C523B196CE00EDFD47 /* demo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = demo.cpp; sourceTree = "<group>"; };
 		11F2D8C823B1A97500EDFD47 /* intersections.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = intersections.cpp; sourceTree = "<group>"; };
@@ -158,6 +166,7 @@
 				11D4B1FC23AEDDD90032DF1D /* transformationsTest.cpp */,
 				11B9E47023A306B70084FA49 /* tuplesTest.cpp */,
 				117B804F23B849D50019E0B4 /* worldTest.cpp */,
+				11C640C723BD7756008CD1E8 /* cameraTest.cpp */,
 			);
 			path = rayTracerTestRunner;
 			sourceTree = "<group>";
@@ -167,6 +176,7 @@
 			children = (
 				117B804B23B849C80019E0B4 /* world.cpp */,
 				117B804C23B849C80019E0B4 /* world.hpp */,
+				11C640C923BD86B4008CD1E8 /* demo.cpp */,
 			);
 			path = world;
 			sourceTree = "<group>";
@@ -192,6 +202,7 @@
 		11B9E46F23A306B70084FA49 /* rayTracer */ = {
 			isa = PBXGroup;
 			children = (
+				11C640C223BD7735008CD1E8 /* camera */,
 				11D4B1E423A9C6840032DF1D /* canvas */,
 				11D4B1DD23A9B9820032DF1D /* colors */,
 				11F2D8C723B1A94B00EDFD47 /* intersections */,
@@ -200,7 +211,7 @@
 				11CEEFD223B5783A00F10F96 /* materials */,
 				11D4B1F023ADA7360032DF1D /* matrices */,
 				11F2D8B623B026D800EDFD47 /* rays */,
-				11F2D8BE23B030DA00EDFD47 /* spheres */,
+				11F2D8BE23B030DA00EDFD47 /* objects */,
 				11D4B1F723AEDD910032DF1D /* transformations */,
 				11B9E48123A5D2A80084FA49 /* tuples */,
 				117B804A23B849B70019E0B4 /* world */,
@@ -216,6 +227,15 @@
 				11B9E47B23A330720084FA49 /* tuples.hpp */,
 			);
 			path = tuples;
+			sourceTree = "<group>";
+		};
+		11C640C223BD7735008CD1E8 /* camera */ = {
+			isa = PBXGroup;
+			children = (
+				11C640C323BD7745008CD1E8 /* camera.cpp */,
+				11C640C423BD7745008CD1E8 /* camera.hpp */,
+			);
+			path = camera;
 			sourceTree = "<group>";
 		};
 		11CEEFCB23B575EF00F10F96 /* lights */ = {
@@ -284,14 +304,14 @@
 			path = rays;
 			sourceTree = "<group>";
 		};
-		11F2D8BE23B030DA00EDFD47 /* spheres */ = {
+		11F2D8BE23B030DA00EDFD47 /* objects */ = {
 			isa = PBXGroup;
 			children = (
-				11F2D8BF23B030E600EDFD47 /* spheres.cpp */,
-				11F2D8C023B030E600EDFD47 /* spheres.hpp */,
+				11F2D8BF23B030E600EDFD47 /* objects.cpp */,
+				11F2D8C023B030E600EDFD47 /* objects.hpp */,
 				11F2D8C523B196CE00EDFD47 /* demo.cpp */,
 			);
-			path = spheres;
+			path = objects;
 			sourceTree = "<group>";
 		};
 		11F2D8C723B1A94B00EDFD47 /* intersections */ = {
@@ -386,6 +406,7 @@
 				11D4B1FD23AEDDD90032DF1D /* transformationsTest.cpp in Sources */,
 				11D4B1E823A9C6910032DF1D /* canvas.cpp in Sources */,
 				11F2D8BD23B0273300EDFD47 /* raysTest.cpp in Sources */,
+				11C640C623BD7745008CD1E8 /* camera.cpp in Sources */,
 				117B804E23B849C80019E0B4 /* world.cpp in Sources */,
 				11F2D8BA23B0270000EDFD47 /* rays.cpp in Sources */,
 				117B805023B849D50019E0B4 /* worldTest.cpp in Sources */,
@@ -395,9 +416,10 @@
 				11F2D8CD23B1A98D00EDFD47 /* intersectionsTest.cpp in Sources */,
 				11CEEFD623B5784700F10F96 /* materials.cpp in Sources */,
 				11D4B1D623A6D9E10032DF1D /* tuples.cpp in Sources */,
+				11C640C823BD7756008CD1E8 /* cameraTest.cpp in Sources */,
 				11D4B1E223A9B9D80032DF1D /* colorsTest.cpp in Sources */,
 				11F2D8C423B0311C00EDFD47 /* spheresTest.cpp in Sources */,
-				11F2D8C223B030E600EDFD47 /* spheres.cpp in Sources */,
+				11F2D8C223B030E600EDFD47 /* objects.cpp in Sources */,
 				11D4B1F423ADA74D0032DF1D /* matrices.cpp in Sources */,
 				11F2D8CB23B1A97500EDFD47 /* intersections.cpp in Sources */,
 				11CEEFCF23B575FC00F10F96 /* lights.cpp in Sources */,
@@ -414,6 +436,7 @@
 			files = (
 				11B9E47E23A5CFC40084FA49 /* demo.cpp in Sources */,
 				11D4B1F323ADA74D0032DF1D /* matrices.cpp in Sources */,
+				11C640CA23BD86B4008CD1E8 /* demo.cpp in Sources */,
 				117B804D23B849C80019E0B4 /* world.cpp in Sources */,
 				11F2D8CA23B1A97500EDFD47 /* intersections.cpp in Sources */,
 				11F2D8B423B01F2100EDFD47 /* demo.cpp in Sources */,
@@ -422,9 +445,10 @@
 				11CEEFCE23B575FC00F10F96 /* lights.cpp in Sources */,
 				11B9E47C23A330720084FA49 /* tuples.cpp in Sources */,
 				11D4B1E723A9C6910032DF1D /* canvas.cpp in Sources */,
+				11C640C523BD7745008CD1E8 /* camera.cpp in Sources */,
 				11D4B1FA23AEDDC30032DF1D /* transformations.cpp in Sources */,
 				11F2D8B923B0270000EDFD47 /* rays.cpp in Sources */,
-				11F2D8C123B030E600EDFD47 /* spheres.cpp in Sources */,
+				11F2D8C123B030E600EDFD47 /* objects.cpp in Sources */,
 				11F2D8C623B196CE00EDFD47 /* demo.cpp in Sources */,
 				11CEEFD523B5784700F10F96 /* materials.cpp in Sources */,
 				11B9E48023A5D1DF0084FA49 /* main.cpp in Sources */,

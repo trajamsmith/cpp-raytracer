@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <vector>
 #include "lights.hpp"
-#include "spheres.hpp"
+#include "objects.hpp"
 #include "intersections.hpp"
 
 struct World {
@@ -27,6 +27,13 @@ World defaultWorld();
 
 vector<Intersection*> intersectWorld(const World& w, Ray r);
 
-Color shadeHit(World w, Comps c);
+Color shadeHit(const World& w, Comps c);
+
+Color colorAt(const World& w, Ray r);
+
+bool isShadowed(const World& w, Point& p);
+
+// Demo
+void renderWorld();
 
 #endif /* world_hpp */

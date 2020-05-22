@@ -8,7 +8,8 @@
 
 #include "catch.hpp"
 #include "intersections.hpp"
-#include "spheres.hpp"
+#include "objects.hpp"
+#include "transformations.hpp"
 
 // Intersection
 TEST_CASE("An intersection encapsulates t and object") {
@@ -96,4 +97,14 @@ TEST_CASE("The hit, when an intersection occurs on the inside") {
     REQUIRE(comps.eyeV == Vector{0, 0, -1});
     REQUIRE(comps.inside == true);
     REQUIRE(comps.normalV == Vector{0, 0, -1});
+}
+
+TEST_CASE("The hit should offset the point") {
+    Ray r{Point{0, 0, -5}, Vector{0, 0, 1}};
+    shared_ptr<Sphere> shape(new Sphere{translation(0, 0, 1), Material{}});
+    Intersection i{5, shape};
+    Comps comps = prepareComputations(i, r);
+    REQUIRE(comps.overPoint.z < -EPSILON/2);
+    REQUIRE(comps.point.z > comps.overPoint.z);
+    
 }

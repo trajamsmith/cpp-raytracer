@@ -62,3 +62,19 @@ Matrix shearing(double xy, double xz, double yx, double yz, double zx, double zy
         {0, 0, 0, 1},
     });
 };
+
+Matrix viewTransform(Point from, Point to, Vector up) {
+    Vector forward = normalize(to - from);
+    Vector upn = normalize(up);
+    Vector left = crossProduct(forward, upn);
+    Vector trueUp = crossProduct(left, forward);
+    
+    Matrix orientation = Matrix({
+        {left.x, left.y, left.z, 0},
+        {trueUp.x, trueUp.y, trueUp.z, 0},
+        {-forward.x, -forward.y, -forward.z, 0},
+        {0, 0, 0, 1}
+    });
+    
+    return orientation * translation(-from.x, -from.y, -from.z);
+};

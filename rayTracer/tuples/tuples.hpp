@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include <vector>
 
+const double EPSILON = .0000001;
+
 class Tuple {
 public:
     double x, y, z, w;

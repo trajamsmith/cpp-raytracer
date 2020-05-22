@@ -29,12 +29,14 @@ void Material::print() {
 };
 
 Color lighting(Material material, PointLight light,
-               Point point, Vector eyeV, Vector normalV) {
+               Point point, Vector eyeV, Vector normalV,
+               bool inShadow) {
     Color diffuse{0, 0, 0}, specular{0, 0, 0};
     
     Color effectiveColor = material.color * light.intensity;
     Vector lightV = normalize(light.position - point);
     Color ambient = effectiveColor * material.ambient;
+    
     double lightDotNormal = dotProduct(lightV, normalV);
     if (lightDotNormal > 0) {
         diffuse = effectiveColor * material.diffuse * lightDotNormal;
@@ -48,5 +50,9 @@ Color lighting(Material material, PointLight light,
         }
     }
 
-    return ambient + diffuse + specular;
+    if (inShadow == true) {
+        return ambient;
+    } else {
+        return ambient + diffuse + specular;
+    }
 };

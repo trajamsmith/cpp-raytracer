@@ -13,17 +13,25 @@
 #include "rays.hpp"
 #include "materials.hpp"
 
-class Sphere {
+class Object {
 public:
     Matrix transform;
     Material material;
     
-    Sphere(Matrix transform=initIdentityMatrix(4), Material material=Material{}) :
+    Object(Matrix transform=initIdentityMatrix(4), Material material=Material{}) :
     transform(transform), material(material) {};
     
     void print();
     
-    bool operator== (const Sphere& s2) const;
+    bool operator== (const Object& o2) const;
+};
+
+class Sphere : public Object {
+public:
+    Sphere() : Object() {};
+    
+    Sphere(Matrix transform, Material material) :
+    Object(transform, material) {};
 };
 
 Vector normalAt(shared_ptr<Sphere> s, Point p);

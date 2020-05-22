@@ -74,3 +74,15 @@ TEST_CASE("Lighting with the light behind the surface") {
     Color result = lighting(m, light, position, eyev, normalv);
     REQUIRE(result == Color{0.1, 0.1, 0.1});
 }
+
+TEST_CASE("Lighting with the surface in shadow") {
+    Material m{};
+    Point position{0, 0, 0};
+
+    Vector eyeV{0, 0, -1};
+    Vector normalV{0, 0, -1};
+    PointLight light{Point{0, 0, -10}, Color{1, 1, 1}};
+    bool inShadow = true;
+    auto result = lighting(m, light, position, eyeV, normalV, inShadow);
+    REQUIRE(result == Color{0.1, 0.1, 0.1});
+}

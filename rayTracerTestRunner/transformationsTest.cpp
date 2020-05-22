@@ -163,3 +163,41 @@ TEST_CASE("Chained transformations must be applied in reverse order") {
     Matrix T = C * B * A;
     REQUIRE(T * p == Point(15, 0, 7));
 }
+
+// World Orientation
+TEST_CASE("The transformation matrix for the default orientation") {
+    Point from{0, 0, 0};
+    Point to{0, 0, -1};
+    Vector up{0, 1, 0};
+    auto t = viewTransform(from, to, up);
+    REQUIRE(t == initIdentityMatrix(4));
+}
+
+TEST_CASE("The transformation matrix looking in positive z direction") {
+    Point from{0, 0, 0};
+    Point to{0, 0, 1};
+    Vector up{0, 1, 0};
+    auto t = viewTransform(from, to, up);
+    REQUIRE(t == scaling(-1, 1, -1));
+}
+
+TEST_CASE("The view transformation moves the world") {
+    Point from{0, 0, 8};
+    Point to{0, 0, 0};
+    Vector up{0, 1, 0};
+    auto t = viewTransform(from, to, up);
+    REQUIRE(t == translation(0, 0, -8));
+}
+
+TEST_CASE("An arbitrary view transformation") {
+    Point from{1, 3, 2};
+    Point to{4, -2, 8};
+    Vector up{1, 1, 0};
+    auto t = viewTransform(from, to, up);
+    REQUIRE(t == Matrix({
+        {-0.50709, 0.50709, 0.67612, -2.36643},
+        {0.76772, 0.60609, 0.12122, -2.82843},
+        {-0.35857, 0.59761, -0.71714, 0.0},
+        {0.0, 0.0, 0.0, 1.0}
+    }));
+}

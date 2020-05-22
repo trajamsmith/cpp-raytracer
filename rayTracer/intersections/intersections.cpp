@@ -7,16 +7,16 @@
 //
 
 #include "intersections.hpp"
-#include "spheres.hpp"
+#include "objects.hpp"
 #include <math.h>
 #include <iostream>
 
 vector<Intersection*> intersect(shared_ptr<Sphere> s, Ray origR) {
     Ray r = transform(origR, inverse(s->transform));
     
-    Vector sphereToRay = r.getOrigin() - Point(0, 0, 0);
-    double a = dotProduct(r.getDirection(), r.getDirection());
-    double b = 2 * dotProduct(r.getDirection(), sphereToRay);
+    Vector sphereToRay = r.origin - Point(0, 0, 0);
+    double a = dotProduct(r.direction, r.direction);
+    double b = 2 * dotProduct(r.direction, sphereToRay);
     double c = dotProduct(sphereToRay, sphereToRay) - 1;
     double discriminant = (b * b) - (4 * a * c);
     
@@ -35,7 +35,7 @@ vector<Intersection*> intersect(shared_ptr<Sphere> s, Ray origR) {
 };
 
 Intersection* hit(std::vector<Intersection*> intersects) {
-    double lowest = 1000000;
+    double lowest = std::numeric_limits<double>::max();
     Intersection* nearest = nullptr;
     for (auto i : intersects) {
         if (i->getT() < lowest && i->getT() >= 0) {
@@ -53,8 +53,9 @@ Comps prepareComputations(Intersection i, Ray r) {
     comps.object = i.getS();
     
     comps.point = position(r, comps.t);
-    comps.eyeV = -(r.getDirection());
+    comps.eyeV = -(r.direction);
     comps.normalV = normalAt(comps.object, comps.point);
+    comps.overPoint = comps.point + comps.normalV * EPSILON;
     
     double dot = dotProduct(comps.normalV, comps.eyeV);
     if (dot < 0) {
